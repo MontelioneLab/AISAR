@@ -30,3 +30,7 @@ relationships. This study demonstrates the potential of AI-based modeling with e
 generate conformational ensembles followed by conformer selection with experimental data as an
 alternative to conventional restraint satisfaction protocols for protein NMR structure determination.
 
+Key words: Solution NMR, AlphaFold2, Gaussia luciferase, Bayesian scoring function, conformer
+selection, conformational dynamics, enhanced sampling.
+
+<img width="1044" alt="Screen Shot 2024-06-27 at 2 44 11 PM" src="https://media.github.rpi.edu/user/352/files/69a9e7e4-a2eb-441a-8bfd-e1c7edc676f4">

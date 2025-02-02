@@ -1,6 +1,7 @@
 # Hidden Structural States of Proteins Revealed by Conformer Selection with AlphaFold-NMR
 
 Yuanpeng J. Huang1*, Theresa A. Ramelot1, Laura E. Spaman1, Naohiro Kobayashi2, and Gaetano T. Montelione1*
+
 1 Department of Chemistry and Chemical Biology, Center for Biotechnology
 and Interdisciplinary Sciences, Rensselaer Polytechnic Institute, Troy, New York, 12180 USA
 

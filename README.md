@@ -1,36 +1,8 @@
 # Hidden Structural States of Proteins Revealed by Conformer Selection with AlphaFold-NMR
 
-Yuanpeng J. Huang and Gaetano T. Montelione
+Yuanpeng J. Huang1*, Theresa A. Ramelot1, Laura E. Spaman1, Naohiro Kobayashi2, and Gaetano T. Montelione1*
 
 Abstract
 
-Recent advances in molecular modeling using deep learning can revolutionize our understanding of
-dynamic protein structures. NMR is particularly well-suited for determining dynamic features of
-biomolecular structures. The conventional process for determining biomolecular structures from
-experimental NMR data involves its representation as conformation-dependent restraints, followed by
-generation of structural models guided by these spatial restraints. Here we describe an alternative
-approach: generating a distribution of realistic protein conformational models using artificial intelligence-
-(AI-) based methods and then selecting the sets of conformers that best explain the experimental data. We
-applied this conformational selection approach to redetermine the solution NMR structure of the enzyme
-Gaussia luciferase. First, we generated a diverse set of conformer models using AlphaFold2 (AF2) with
-an enhanced sampling protocol. The models that best-fit NOESY and chemical shift data were then
-selected with a Bayesian scoring metric. The resulting models include features of both the published
-NMR structure and the standard AF2 model generated without enhanced sampling. This “AlphaFold-
-NMR” protocol also generated an alternative “open” conformational state that fits nearly as well to the
-overall NMR data but accounts for some NOESY data that is not consistent with first “closed”
-conformational state; while other NOESY data consistent with this second state are not consistent with the
-first conformational state. The structure of this “open” structural state differs from that of the “closed”
-state primarily by the position of a thumb-shaped loop between 𝛼-helices H5 and H6, revealing a cryptic
-surface pocket. These alternative conformational states of Gluc are supported by “double recall” analysis
-of NOESY data and AF2 models. Additional structural states are also indicated by backbone chemical
-shift data indicating partially-disordered conformations for the C-terminal segment. Considered as a
-multistate ensemble, these multiple states of Gluc together fit the NOESY and chemical shift data better
-than the “restraint-based” NMR structure and provide novel insights into its structure-dynamic-function
-relationships. This study demonstrates the potential of AI-based modeling with enhanced sampling to
-generate conformational ensembles followed by conformer selection with experimental data as an
-alternative to conventional restraint satisfaction protocols for protein NMR structure determination.
+We introduce AlphaFold-NMR, a novel approach to NMR structure determination that reveals previously undetected protein conformational states. Unlike conventional NMR methods which rely on NOE-derived spatial restraints, AlphaFold-NMR combines AI-driven conformational sampling with Bayesian scoring of realistic protein models against NOESY and chemical shift data. This method uncovers alternative conformational states of the enzyme Gaussia luciferase, involving large-scale changes in the lid, binding pocket, and surface cavities, as well as subtly different conformational states of the tumor suppressor human Cyclin-Dependent Kinase 2-Associated Protein 1. These studies demonstrate the potential of AI-based modeling with enhanced sampling to generate conformational models followed by conformer selection and validation with experimental data as an alternative to conventional restraint-satisfaction protocols for protein NMR structure determination. The AlphaFold-NMR framework enables discovery of conformational heterogeneity and cryptic pockets which could not be characterized by traditional NMR data analysis methods, providing new insights into protein structure-function relationships.
 
-Key words: Solution NMR, AlphaFold2, Gaussia luciferase, Bayesian scoring function, conformer
-selection, conformational dynamics, enhanced sampling.
-
-<img width="1044" alt="Screen Shot 2024-06-27 at 2 44 11 PM" src="https://media.github.rpi.edu/user/352/files/69a9e7e4-a2eb-441a-8bfd-e1c7edc676f4">

@@ -15,9 +15,9 @@ scripts used:
 
 DataSet: 
   * CDK2AP1: 5984 models in relaxedModelsFromAFsample/ <br>
-    scripts used for generating 5984 models CDK2AP1/scripts/AI_ES: <br>
-      * calculate and relax all 6000 models: run_afsample6000.sh <br>
-      *filter out bad models: <br> 
+    scripts used for generating 5984 models CDK2AP1/scripts/AI_ES: 
+      * calculate and relax all 6000 models: run_afsample6000.sh 
+      * filter out bad models: <br> 
           https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts <br>
   
   * GLuc  

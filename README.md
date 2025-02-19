@@ -10,27 +10,25 @@ Data and scripts for CDK2AP1-doc1 AF-NMR analysis:
 
 1. AI enhanced sampling: CDK2AP1-doc1/AI_ES
 
-  * doc1_noN.fasta: input fasta sequence. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid any influence to the pTM and \<pLDDT\> scores. 
-  * run_doc1_noN.sh  
-  * run_afsample6000.sh 
-  * FilterAF2.py
-
-  All files needs to be in the same directory 
-  
-    
+  * doc1_noN.fasta: input fasta sequence. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid any potential influence on the pTM and \<pLDDT\> scores. 
+     
   Commands: 
 
-  > sbatch run_doc1_noN.sh
+  > sbatch run_doc1_noN.sh (running with slrum) 
   
-  This command calculates and relax all 6000 models. <br>
+  This command calculates and relax all 6000 models using run_afsample6000.sh <br>
+  The output is in AF_models_dropout/doc1_noN. pTM score is reported AF_models_dropout/scores.sc 
   
-  > python FilterAF2.py -rel -inD AF_models_dropout/doc1_noN -outD filteredAFsample
+  > python FilterAF2.py -rel -inD AF_models_dropout/doc1_noN -outD filteredModles
   
-  This command filters out bad models. the python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
+  This command filters out bad models. The python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
 
-
-
-5984 models (CDK2AP1-doc1/relaxedModelsFromAFsample/) are used for the following analyses: 
+  Addtional processing scripts to merge two chains into one chain for clustering analysis
+  > sh runMergedChain.py filteredModels mergedModels
+  
+  This command finds all pdb file in the fileredModels, merge two chains (using mergeChain.py) and save them in the mergedModels directory. 
+  
+  5984 models with one merged chain (CDK2AP1-doc1/relaxedModelsFromAFsample/) are used for the following analyses:  
   
 2. Clustering
   

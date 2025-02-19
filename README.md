@@ -10,17 +10,15 @@ Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione 
 
 Input sequence: We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid any influence to the pTM and \<pLDDT\> scores. 
   
-scripts used: 
-  
-* DataSet: 
+DataSet: 
   * CDK2AP1-doc1: 5984 models in relaxedModelsFromAFsample/
   * GLuc 
   
-
-* CDK2AP1-doc1/scripts/AI_ES: Scripts to generate CDK2AP1-doc1 5984 models: 
-      * doc1_noN.fasta: input fasta sequence 
-      * run_doc1_noN.sh:  
-      * run_afsample6000.sh 
+scripts: 
+* CDK2AP1-doc1/scripts/AI_ES: Scripts to generate CDK2AP1-doc1 5984 models 
+      - doc1_noN.fasta: input fasta sequence 
+      - run_doc1_noN.sh  
+      - run_afsample6000.sh 
   
   All three files needs to be in the same directory 
   

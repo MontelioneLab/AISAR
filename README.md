@@ -13,26 +13,30 @@ Input sequence: We exclude the long disordered tails and non-native tags from th
 scripts used: 
   
 DataSet: 
-  * CDK2AP1-doc1: 5984 models in relaxedModelsFromAFsample/ <br>
+  * CDK2AP1-doc1: 5984 models in relaxedModelsFromAFsample/
+  * GLuc 
   
-  commands to generate 5984 models:
-  > sbatch run_doc1_noN.sh 
-  
-  This command calculates and relax all 6000 models. <br>
-  Scripts used to run this command: CDK2AP1-doc1/scripts/AI_ES <br>
+
+CDK2AP1-doc1/scripts/AI_ES: Scripts to generate CDK2AP1-doc1 5984 models: 
       * doc1_noN.fasta: input fasta sequence 
       * run_doc1_noN.sh:  
       * run_afsample6000.sh 
   
   All three files needs to be in the same directory 
   
-  > xxxx
-  
       * filter out bad models: <br> 
           https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts <br>
   
-  * GLuc  
-  
+Commands: 
+> sbatch run_doc1_noN.sh 
+ 
+ This command calculates and relax all 6000 models. <br>
+ 
+> XXXX
+
+
+
+ 
 2. Clustering
   
 scripts for CDK2AP1: 

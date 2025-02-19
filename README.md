@@ -16,6 +16,7 @@ DataSet:
   
 scripts: 
 * CDK2AP1-doc1/scripts/AI_ES: Scripts to generate CDK2AP1-doc1 5984 models 
+
       - doc1_noN.fasta: input fasta sequence 
       - run_doc1_noN.sh  
       - run_afsample6000.sh 
@@ -26,6 +27,7 @@ scripts:
           https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts <br>
   
 * Commands: 
+
   * > sbatch run_doc1_noN.sh 
  
  This command calculates and relax all 6000 models. <br>

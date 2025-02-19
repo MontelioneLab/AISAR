@@ -6,35 +6,31 @@ Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione 
 
 # Usage
 
-1. AI enhanced sampling
+Data and scripts for CDK2AP1-doc1 AF-NMR analysis: 
 
-Input sequence: We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid any influence to the pTM and \<pLDDT\> scores. 
-  
-DataSet: 
-  * CDK2AP1-doc1: 5984 models in relaxedModelsFromAFsample/
-  * GLuc 
-  
-Scripts: CDK2AP1-doc1/scripts/AI_ES: Scripts to generate CDK2AP1-doc1 5984 models 
-  * doc1_noN.fasta: input fasta sequence 
+1. AI enhanced sampling: CDK2AP1-doc1/AI_ES
+
+  * doc1_noN.fasta: input fasta sequence. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid any influence to the pTM and \<pLDDT\> scores. 
   * run_doc1_noN.sh  
   * run_afsample6000.sh 
+  * FilterAF2.py
+
+  All files needs to be in the same directory 
   
-  All three files needs to be in the same directory 
+    
+  Commands: 
+
+  > sbatch run_doc1_noN.sh
   
-  * filter out bad models: <br> 
-          https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts <br>
+  This command calculates and relax all 6000 models. <br>
   
-* Commands: 
-
-  * > sbatch run_doc1_noN.sh 
- 
- This command calculates and relax all 6000 models. <br>
- 
-  * > XXXX
+  > python FilterAF2.py -rel -inD AF_models_dropout/doc1_noN -outD filteredAFsample
+  
+  This command filters out bad models. https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
 
 
-
- 
+  Results: 5984 models passes the filtering and stored here: CDK2AP1-doc1/relaxedModelsFromAFsample/
+  
 2. Clustering
   
 scripts for CDK2AP1: 

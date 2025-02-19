@@ -32,11 +32,17 @@ Data and scripts for CDK2AP1-doc1 AF-NMR analysis:
   
 2. Clustering
   
-scripts for CDK2AP1: 
+R scripts for CDK2AP1: 
+
+ dmPCAClustering.R --> output: doc1_noN_dm_pc_merged.RData, cluster_all_dm.csv
   
 3. Scoring
  
 scripts for CDK2AP1: 
+ * RPF scores: runRPF
+ * pLDDT scores: 
+ * combine all scores: 
+ * plots: 
   
 4. State combination
   

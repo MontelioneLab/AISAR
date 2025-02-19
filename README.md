@@ -16,7 +16,8 @@ DataSet:
   * CDK2AP1-doc1: 5984 models in relaxedModelsFromAFsample/ <br>
   
   commands to generate 5984 models:
-  > sbatch run_doc1_noN.sh <br>
+  > sbatch run_doc1_noN.sh 
+  
   This command calculates and relax all 6000 models. 
   Scripts used to run this command: CDK2AP1-doc1/scripts/AI_ES
       * doc1_noN.fasta: input fasta sequence 
@@ -24,7 +25,8 @@ DataSet:
       * run_afsample6000.sh 
   
   All three files needs to be in the same directory 
-  >
+  
+  > xxxx
   
       * filter out bad models: <br> 
           https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts <br>

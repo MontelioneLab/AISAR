@@ -14,16 +14,14 @@ DataSet:
   * CDK2AP1-doc1: 5984 models in relaxedModelsFromAFsample/
   * GLuc 
   
-scripts: 
-* CDK2AP1-doc1/scripts/AI_ES: Scripts to generate CDK2AP1-doc1 5984 models 
-
-      - doc1_noN.fasta: input fasta sequence 
-      - run_doc1_noN.sh  
-      - run_afsample6000.sh 
+Scripts: CDK2AP1-doc1/scripts/AI_ES: Scripts to generate CDK2AP1-doc1 5984 models 
+  * doc1_noN.fasta: input fasta sequence 
+  * run_doc1_noN.sh  
+  * run_afsample6000.sh 
   
   All three files needs to be in the same directory 
   
-      * filter out bad models: <br> 
+  * filter out bad models: <br> 
           https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts <br>
   
 * Commands: 

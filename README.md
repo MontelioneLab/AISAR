@@ -8,15 +8,24 @@ Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione 
 
 1. AI enhanced sampling
 
-Input sequence: It is better to exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, which may influence the pTM and <pLDDT> scores. 
+Input sequence: We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid any influence to the pTM and <pLDDT> scores. 
   
 scripts used: 
   
-
 DataSet: 
-  * CDK2AP1: 5984 models in relaxedModelsFromAFsample/ <br>
-    scripts used for generating 5984 models CDK2AP1/scripts/AI_ES: 
-      * calculate and relax all 6000 models: run_afsample6000.sh 
+  * CDK2AP1-doc1: 5984 models in relaxedModelsFromAFsample/ <br>
+  
+  commands to generate 5984 models:
+  > sbatch run_doc1_noN.sh <br>
+  This command calculates and relax all 6000 models. 
+  Scripts used to run this command: CDK2AP1-doc1/scripts/AI_ES
+      * doc1_noN.fasta: input fasta sequence 
+      * run_doc1_noN.sh:  
+      * run_afsample6000.sh 
+  
+  All three files needs to be in the same directory 
+  >
+  
       * filter out bad models: <br> 
           https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts <br>
   

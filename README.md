@@ -18,8 +18,8 @@ DataSet:
   commands to generate 5984 models:
   > sbatch run_doc1_noN.sh 
   
-  This command calculates and relax all 6000 models. 
-  Scripts used to run this command: CDK2AP1-doc1/scripts/AI_ES
+  This command calculates and relax all 6000 models. <br>
+  Scripts used to run this command: CDK2AP1-doc1/scripts/AI_ES <br>
       * doc1_noN.fasta: input fasta sequence 
       * run_doc1_noN.sh:  
       * run_afsample6000.sh 

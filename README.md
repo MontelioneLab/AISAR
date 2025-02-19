@@ -26,10 +26,11 @@ Data and scripts for CDK2AP1-doc1 AF-NMR analysis:
   
   > python FilterAF2.py -rel -inD AF_models_dropout/doc1_noN -outD filteredAFsample
   
-  This command filters out bad models. https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
+  This command filters out bad models. the python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
 
 
-  Results: 5984 models passes the filtering and stored here: CDK2AP1-doc1/relaxedModelsFromAFsample/
+
+5984 models (CDK2AP1-doc1/relaxedModelsFromAFsample/) are used for the following analyses: 
   
 2. Clustering
   

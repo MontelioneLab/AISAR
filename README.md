@@ -8,7 +8,7 @@ Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione 
 
 Data and scripts for CDK2AP1-doc1 AF-NMR analysis: 
 
-1. AI enhanced sampling: CDK2AP1-doc1/EnhandedSampling
+1. AI enhanced sampling: CDK2AP1-doc1/EnhancedSampling/
 
   * doc1_noN.fasta: input fasta sequence. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid any potential influence on the pTM and \<pLDDT\> scores. 
      
@@ -34,20 +34,24 @@ Data and scripts for CDK2AP1-doc1 AF-NMR analysis:
   
 R scripts for CDK2AP1: 
 
- dmPCAClustering.R --> output: doc1_noN_dm_pc_merged.RData, cluster_all_dm.csv
+ CDK2AP1-doc1/Clustering/:
+    - dmPCAClustering.R --> output: doc1_noN_dm_pc_merged.RData, cluster_all_dm.csv
   
 3. Scoring
- 
-scripts for CDK2AP1: 
- * RPF/: directory to calculate RPF scores: 
-  - Input/
-  - 
- * RCI/: directory to calculate RCI and SCC scores
+
+NMRdata: 
+ * CDK2AP1-doc1/RPF/: directory to calculate RPF scores: 
+   - Input/
+   - 
+ * CDK2AP1-doc1/RCI/: directory to calculate RCI and SCC scores
    - RPFtable2SHIFTY.py: convert the chemical shift file used by RPF (bmrbtable file) to SHIFTY format 
    - nmrstar3toSHIFTY-fromBMRB.py: give the bmrb ID number, download chemical shift assignments from the BMRB database and convert to SHIFTY format
    - nmrstar3toSHIFTY.py: convert the local bmrb file in nmrstart 3.0 format to SHIFTY format 
- * combine all scores: 
- * plots: 
+ 
+ Other scores: 
+ * CDK2AP1-doc1/Scoring/: 
+  - combine all scores: 
+  - plots: 
   
 4. State combination
   

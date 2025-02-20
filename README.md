@@ -42,8 +42,10 @@ scripts for CDK2AP1:
  * RPF/: directory to calculate RPF scores: 
   - Input/
   - 
- * RCI/: directory to calculate RCI and SCC scores:
-  - 
+ * RCI/: directory to calculate RCI and SCC scores
+  - RPFtable2SHIFTY.py: convert the chemical shift file used by RPF (bmrbtable file) to SHIFTY format 
+  - nmrstar3toSHIFTY-fromBMRB.py: give the bmrb ID number, download chemical shift assignments from the BMRB database and convert to SHIFTY format
+  - nmrstar3toSHIFTY.py: convert the local bmrb file in nmrstart 3.0 format to SHIFTY format 
  * combine all scores: 
  * plots: 
   

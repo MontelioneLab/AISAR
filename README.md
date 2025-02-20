@@ -8,7 +8,7 @@ Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione 
 
 Data and scripts for CDK2AP1-doc1 AF-NMR analysis: 
 
-1. AI enhanced sampling: CDK2AP1-doc1/AI_ES
+1. AI enhanced sampling: CDK2AP1-doc1/AIenhandedSampling
 
   * doc1_noN.fasta: input fasta sequence. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid any potential influence on the pTM and \<pLDDT\> scores. 
      
@@ -17,7 +17,7 @@ Data and scripts for CDK2AP1-doc1 AF-NMR analysis:
   > sbatch run_doc1_noN.sh (running with slrum) 
   
   This command calculates and relax all 6000 models using run_afsample6000.sh <br>
-  The output is in AF_models_dropout/doc1_noN. pTM score is reported AF_models_dropout/scores.sc 
+  The output models are here: AF_models_dropout/doc1_noN. pTM score is reported here: AF_models_dropout/scores.sc 
   
   > python FilterAF2.py -rel -inD AF_models_dropout/doc1_noN -outD filteredModles
   
@@ -28,7 +28,7 @@ Data and scripts for CDK2AP1-doc1 AF-NMR analysis:
   
   This command finds all pdb file in the fileredModels, merge two chains (using mergeChain.py) and save them in the mergedModels directory. 
   
-  5984 models with one merged chain (CDK2AP1-doc1/relaxedModelsFromAFsample/) are used for the following analyses:  
+  5984 models with one merged chain (CDK2AP1-doc1/ESmodels/) are used for the following analyses:  
   
 2. Clustering
   

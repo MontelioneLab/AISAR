@@ -8,7 +8,7 @@ Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione 
 
 Data and scripts for CDK2AP1-doc1 AF-NMR analysis: 
 
-1. AI enhanced sampling: CDK2AP1-doc1/AIenhandedSampling
+1. AI enhanced sampling: CDK2AP1-doc1/EnhandedSampling
 
   * doc1_noN.fasta: input fasta sequence. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid any potential influence on the pTM and \<pLDDT\> scores. 
      

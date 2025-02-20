@@ -39,8 +39,11 @@ R scripts for CDK2AP1:
 3. Scoring
  
 scripts for CDK2AP1: 
- * RPF scores: runRPF
- * pLDDT scores: 
+ * RPF/: directory to calculate RPF scores: 
+  - Input/
+  - 
+ * RCI/: directory to calculate RCI and SCC scores:
+  - 
  * combine all scores: 
  * plots: 
   

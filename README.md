@@ -10,20 +10,22 @@ Data and scripts for CDK2AP1-doc1 AF-NMR analysis:
 
 1. AI enhanced sampling: CDK2AP1-doc1/EnhancedSampling/
 
-  * doc1_noN.fasta: input fasta sequence. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid any potential influence on the pTM and \<pLDDT\> scores. 
+  * doc1_noN.fasta: input fasta sequence. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid potential influence on the pTM and \<pLDDT\> scores. 
      
   Commands: 
 
   > sbatch run_doc1_noN.sh (running with slrum) 
   
   This command calculates and relax all 6000 models using run_afsample6000.sh <br>
-  The output models are here: AF_models_dropout/doc1_noN. pTM score is reported here: AF_models_dropout/scores.sc 
+  The output models are here: AF_models_dropout/doc1_noN. pTM score is reported here: AF_models_dropout/scores.sc and log from AF: slurm-xxx.out 
   
-  > python FilterAF2.py -rel -inD AF_models_dropout/doc1_noN -outD filteredModles
+  > python FilterAF2.py -log slurm-xxx.out -rel -inD AF_models_dropout/doc1_noN -outD filteredModels
   
-  This command filters out bad models. The python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
+  This command filters out bad models based on the AF log file (e.g. slurm-xxx.out). The python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
 
-  Addtional processing scripts to merge two chains into one chain for clustering analysis
+  Additional processing scripts: 
+  
+  Merge two chains into one chain for clustering analysis
   > sh runMergedChain.py filteredModels mergedModels
   
   This command finds all pdb file in the fileredModels, merge two chains (using mergeChain.py) and save them in the mergedModels directory. 
@@ -35,7 +37,7 @@ Data and scripts for CDK2AP1-doc1 AF-NMR analysis:
 R scripts for CDK2AP1: 
 
  CDK2AP1-doc1/Clustering/:
-    - dmPCAClustering.R --> output: doc1_noN_dm_pc_merged.RData, cluster_all_dm.csv
+    - dmPCAClustering.R --> output: doc1_noN_dm_pc_merged.RData, cluster_all_dm.csv (set the working dir to this dir in Rstudio) 
   
 3. Scoring
 

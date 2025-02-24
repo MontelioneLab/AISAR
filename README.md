@@ -37,8 +37,10 @@ Data and scripts for CDK2AP1-doc1 AF-NMR analysis:
 R scripts for CDK2AP1: 
 
  CDK2AP1-doc1/Clustering/:
-    - dmPCAClustering.R --> output: doc1_noN_dm_pc_merged.RData, cluster_all_dm.csv (set the working dir to this dir in Rstudio) 
-  
+    dmPCAClustering.R --> output: pc_dm_pdbs.RData, cluster_pc_dm.csv (in Rstudio, set the working dir to this dir before running the R script) 
+ 
+ We found that "ward methods" gives largest agglomerative coefficient. Number of clusters --> by viusal inspection of "Dendrogram" and pc plots to identify number of well-seperated clusters.  
+ 
 3. Scoring
 
 NMRdata: 

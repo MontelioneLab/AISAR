@@ -4,6 +4,17 @@ Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione 
 
 <img width="1161" alt="flowChart" src="https://media.github.rpi.edu/user/352/files/b6534f5c-e03d-4529-a4a5-bbc697c9db04">
 
+#Software Requirements
+
+##Python Dependences
+AF-NMR mainly depends on the Python scientifc stack
+
+numpy
+pandas
+
+
+
+
 # Usage
 
 Data and scripts for CDK2AP1-doc1 AF-NMR analysis: 
@@ -64,3 +75,4 @@ scripts for CDK2AP1:
 5. Validation
   
 scripts for CDK2AP1:
+

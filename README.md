@@ -26,7 +26,7 @@ RCItools -- tools we developed to generate SHIFTY input file to run RCI webserve
   * nmrstar3toSHIFTY-fromBMRB.py: give the bmrb ID number, download chemical shift assignments from the BMRB database and convert to SHIFTY format
   * nmrstar3toSHIFTY.py: convert the local bmrb file in nmrstart 3.0 format to SHIFTY format 
 
-# AlphaFold-NMR Scripts 
+# AlphaFold-NMR Scripts with Demo (set working dir: CDK2AP1-doc1)
 
 ## 1. enhancedSampling 
 * run_afsample6000.sh 
@@ -38,23 +38,8 @@ RCItools -- tools we developed to generate SHIFTY input file to run RCI webserve
    
 * FilterAF2.py: filters out bad models based on the AF log file. The python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
 
-## 2. clustering
-* dmPCAClustering.R
 
-## 3. scoring
-* calcpLDDTscores.py
-* getScores.py
-
-## 4. stateCombination
-* selectModles.py
-
-## 5. doubleRecall analysis 
-
-
-# Demo - set working dir: CDK2AP1-doc1 
-
-1. AI enhanced sampling: 
-
+### Demo: 
   * doc1_noN.fasta: input fasta sequence. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid potential influence on the pTM and \<pLDDT\> scores. 
      
   Commands: 
@@ -76,30 +61,32 @@ RCItools -- tools we developed to generate SHIFTY input file to run RCI webserve
   This command finds all pdb file in the fileredModels, merge two chains (using mergeChain.py) and save them in the mergedModels directory. 
   
   5984 models with one merged chain (CDK2AP1-doc1/ESmodels/) are used for the following analyses:  
-  
-2. Clustering
-  
-R script: 
 
-    dmPCAClustering.R --> output: pc_dm_pdbs.RData, cluster_pc_dm.csv (in Rstudio, set the working dir to CDK2AP1-doc1 before running the R script) 
+## 2. clustering
+* dmPCAClustering.R
+    --> output: pc_dm_pdbs.RData, cluster_pc_dm.csv (in Rstudio, set the working dir to CDK2AP1-doc1 before running the R script) 
  
 We found that "ward methods" gives largest agglomerative coefficient. Number of clusters --> by viusal inspection of "Dendrogram" and pc plots to identify number of well-seperated clusters.  
  
-3. Scoring
-
+## 3. scoring
 * calcpLDDTscores.py
   - get <pLDDT> scores for each model 
-* getScores.py 
+* getScores.py
   - combine all scores
-    * input: scores.sc (from AFsample), pLDDT.sc (from calcpLDDTscores.py), scc.sc (from getSCC.py), rpf.sc(from getRPF.py), cluster_pc_dm.csv (from R clustering analysis)
+    Example: input: scores.sc (from AFsample), pLDDT.sc (from calcpLDDTscores.py), scc.sc (from getSCC.py), rpf.sc(from getRPF.py), cluster_pc_dm.csv (from R clustering analysis)
    > sh ../scripts/getScores.py > scores.all 
 
-4. State combination
-* selectModels.py 
+## 4. stateCombination
+* selectModles.py
   - select models based on p(model|NMR) scores 
   > sh ../scripts/selectModels.py scores.all ESmodels ".pdb"
-  
-5. Validation by doubleRecall analysis
+
+## 5. doubleRecall analysis 
+
+
+
+
+
   
 
 

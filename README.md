@@ -30,7 +30,7 @@ For doubleRecall analysis: https://montelionelab.chem.rpi.edu/rpf/
 
 *** all paths in the scripts need to be changed to your local path 
 
-## 1. AI Enhanced sampling 
+## 1. AI Enhanced sampling with AFsample (https://github.com/bjornwallner/alphafoldv2.2.0)
 * run_afsample6000.sh 
    - need to modify the path to fit your local computer system
    - calculate 6000 models and also relax all 6000 models.  

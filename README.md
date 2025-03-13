@@ -24,7 +24,7 @@ https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 
 # AlphaFold-NMR Scripts with Demo (set working dir: CDK2AP1-doc1)
 
-## 1. AI EnhancedSampling 
+## 1. AI Enhanced sampling 
 * run_afsample6000.sh 
    - need to modify the path to fit your local computer system
    - calculate 6000 models and also relax all 6000 models.  
@@ -77,7 +77,7 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
    > python ../scripts/calcupLDDTscores.py 
    > python ../scripts/getScores.py > scores.all 
 ```
-## 4. StateCombination
+## 4. State combination
 * selectModles.py: select models based on p(model|NMR) scores 
 
 ``` 

@@ -37,5 +37,6 @@ grps <- cutree(hc2, k=4)
 plot(pc, col=grps)
 
 cluster = data.frame(unlist(pdbs.aa$id), pc$z[,1:3],unlist(grps))
-write.csv(cluster, "cluster_pc_dm.csv", row.names=FALSE)
+write.table(cluster, "cluster_pc_dm.csv", sep = ",", row.names = FALSE, col.names = FALSE, quote = FALSE)
+
 

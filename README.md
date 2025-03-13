@@ -24,6 +24,8 @@ https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 
 # AlphaFold-NMR Scripts with Demo (set working dir: CDK2AP1-doc1)
 
+*** all paths in the scripts need to be changed to your local path 
+
 ## 1. AI Enhanced sampling 
 * run_afsample6000.sh 
    - need to modify the path to fit your local computer system
@@ -65,14 +67,13 @@ https://zenodo.org/records/15015917 has 5984 models with one merged chain. Pleas
 We found that "ward methods" gives largest agglomerative coefficient. Number of clusters --> by viusal inspection of "Dendrogram" and pc plots to identify number of well-seperated clusters.  
  
 ## 3. Scoring
-* runSCC.py and getSCC.py: calulate SCC scores for all models, and write to file scc.sc 
+* runSCC.py: calulate SCC scores for all models, and write to file scc.sc 
 * runRPF.py and getRPF.py: calculate RPF scores for all models, and write to file rpf.sc 
 * calcpLDDTscores.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
 * getScores.py: combine all scores
 
  ```
    > python ../scripts/runSCC.py
-   > python ../scripts/getSCC.py
    > python ../scripts/runRPF.py
    > python ../scripts/getRPF.py
    > python ../scripts/calcupLDDTscores.py 

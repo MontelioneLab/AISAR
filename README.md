@@ -51,9 +51,7 @@ RCItools -- tools we developed to generate SHIFTY input file to run RCI webserve
 ## 5. doubleRecall analysis 
 
 
-# Demo - set working dir: CDK2AP1-doc1
-
-Data and scripts for CDK2AP1-doc1 AF-NMR analysis: 
+# Demo - set working dir: CDK2AP1-doc1 
 
 1. AI enhanced sampling: 
 

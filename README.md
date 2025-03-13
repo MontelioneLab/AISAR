@@ -56,7 +56,7 @@ https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
   
   This command finds all pdb file in the fileredModels, merge two chains (using mergeChain.py) and save them in the mergedModels directory. 
   
-### Download AFsample modles
+### Download AFsample models
 https://zenodo.org/records/15015917 has 5984 models with one merged chain. Please unzip it and name it as CDK2AP1-doc1/ESmodels/ for the following analyse. 
 
 ## 2. clustering

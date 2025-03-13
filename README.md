@@ -1,4 +1,4 @@
-# AlphaFold-NMR
+# AlphaFold-NMR (still under construction) 
 
 Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione (2025) "Hidden Structural States of Proteins Revealed by Conformer Selection with AlphaFold-NMR"
 

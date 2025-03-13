@@ -26,11 +26,15 @@ To run RPF, please download ASDP software here: https://github.rpi.edu/RPIBioinf
 ## RPF webserver
 For doubleRecall analysis: https://montelionelab.chem.rpi.edu/rpf/
 
+## AFsample
+https://github.com/bjornwallner/alphafoldv2.2.0
+
+
 # AlphaFold-NMR R and Python Scripts with Demo
 
 *** all paths in the scripts need to be changed to your local path 
 
-## 1. AI Enhanced sampling with AFsample (https://github.com/bjornwallner/alphafoldv2.2.0)
+## 1. AI Enhanced sampling with AFsample ()
 * run_afsample6000.sh 
    - need to modify the path to fit your local computer system
    - calculate 6000 models and also relax all 6000 models.  

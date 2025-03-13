@@ -75,7 +75,7 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
 ## 3. Scoring
 
 ### Input files:
-   - ESmodels: all ".pdb" files 
+   - ESmodels: all pdb files, support filenames with "relaxed*.pdb" or "relaxed*_new.pdb"
    - NMRdata: input files to run RPF
    - RCI1.csv: from RCI webserver, the sequence was edited to match with merged sequence from ESmodels
 

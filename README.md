@@ -85,12 +85,13 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
  - runRPF.py and getRPF.py: calculate RPF scores for all models, and write to file rpf.sc. 
 slow step - performance can be improved by only output recall, precision, f-measure and dp scores and skips others. 
 ```
-   <b>working directory: NMRdata</b> 
+   working directory: NMRdata
    > python ../../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels 
    need to set the RPFcommand in the runRPF.py script 
    > python ../../scripts/getRPF.py rpfESmodels > rpf.sc  
 ```
    output: NMRdata/rpfESmodels and NMRdata/rpf.sc 
+   
 - calcpLDDTscores.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
 
 ```

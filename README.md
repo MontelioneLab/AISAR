@@ -12,8 +12,6 @@ bio3d: http://thegrantlab.org/bio3d/
 cluster 
 ```
 ## Python Dependences
-AF-NMR mainly depends on the Python scientifc stack
-
 ```
 numpy
 pandas

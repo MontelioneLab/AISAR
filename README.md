@@ -35,7 +35,8 @@ https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 * FilterAF2.py: filters out bad models based on the AF log file. The python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
 
 ``` 
-  Input sequence for AlphaFold: doc1_noN.fasta. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid potential influence on the pTM and \<pLDDT\> scores. 
+  Input sequence for AlphaFold: doc1_noN.fasta. 
+  We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid potential influence on the pTM and <pLDDT> scores. 
      
   Commands: 
   > cd CDK2AP1-doc1 

@@ -36,13 +36,13 @@ For doubleRecall analysis: https://montelionelab.chem.rpi.edu/rpf/
    - calculate 6000 models and also relax all 6000 models.  
 
 * mergeChain.py and runMergedChain.py
-   - merge two chains into one chain to PCA analysis 
+   - merge two chains into one chain for PCA analysis 
    
 * FilterAF2.py: filters out bad models based on the AF log file. The python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
 
 ``` 
   Input sequence for AlphaFold: doc1_noN.fasta. 
-  We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid potential influence on the pTM and <pLDDT> scores. 
+  We excluded the long disordered tails and non-native tags from the input fasta sequence for AlphaFold modeling, to avoid potential influence on the pTM and <pLDDT> scores. 
      
   Commands: 
   > cd CDK2AP1-doc1 (set working dir: CDK2AP1-doc1)
@@ -62,13 +62,13 @@ For doubleRecall analysis: https://montelionelab.chem.rpi.edu/rpf/
   This command finds all pdb file in the fileredModels, merge two chains (using mergeChain.py) and save them in the mergedModels directory. 
 ```  
 ### Download pre-filtered AFsample models
-https://zenodo.org/records/15015917 has 5984 models with one merged chain. Please unzip it and name it as CDK2AP1-doc1/ESmodels/ for the following analyse. 
+https://zenodo.org/records/15015917 has 5984 models with one merged chain. Please unzip it and name it as CDK2AP1-doc1/ESmodels/ for the following analysis: 
 
 ## 2. Clustering
 * dmPCAClustering.R
     --> output: pc_dm_pdbs.RData, cluster_pc_dm.csv (in Rstudio, set the working dir to CDK2AP1-doc1 before running the R script) 
  
-We found that "ward methods" gives largest agglomerative coefficient. Number of clusters --> by viusal inspection of "Dendrogram" and pc plots to identify number of well-seperated clusters.  
+We use "ward methods". To identify number of clusters --> by inspection of "Dendrogram" and pc plots.  
  
 ## 3. Scoring
 

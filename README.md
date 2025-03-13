@@ -22,7 +22,7 @@ To run RPF, please download ASDP software here: https://github.rpi.edu/RPIBioinf
 https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 
 
-# AlphaFold-NMR Scripts with Demo (set working dir: CDK2AP1-doc1)
+# AlphaFold-NMR Scripts with Demo
 
 *** all paths in the scripts need to be changed to your local path 
 
@@ -41,7 +41,7 @@ https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
   We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid potential influence on the pTM and <pLDDT> scores. 
      
   Commands: 
-  > cd CDK2AP1-doc1 
+  > cd CDK2AP1-doc1 (set working dir: CDK2AP1-doc1)
   
   > sbatch run_doc1_noN.sh (running with slrum) 
   This command calculates and relax all 6000 models using run_afsample6000.sh <br>
@@ -73,10 +73,10 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
 * getScores.py: combine all scores
 
  ```
-   > python ../scripts/runSCC.py
-   > python ../scripts/runRPF.py
-   > python ../scripts/getRPF.py
-   > python ../scripts/calcupLDDTscores.py 
+   > python ../scripts/runSCC.py > scc.sc
+   > python ../scripts/runRPF.py 
+   > python ../scripts/getRPF.py > rpf.sc  
+   > python ../scripts/calcupLDDTscores.py  > pLDDT.sc 
    > python ../scripts/getScores.py > scores.all 
 ```
 ## 4. State combination

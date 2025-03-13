@@ -21,7 +21,6 @@ To run RPF, please download ASDP software here: https://github.rpi.edu/RPIBioinf
 ## RCI webserver 
 https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 
-
 # AlphaFold-NMR Scripts with Demo
 
 *** all paths in the scripts need to be changed to your local path 
@@ -67,17 +66,30 @@ https://zenodo.org/records/15015917 has 5984 models with one merged chain. Pleas
 We found that "ward methods" gives largest agglomerative coefficient. Number of clusters --> by viusal inspection of "Dendrogram" and pc plots to identify number of well-seperated clusters.  
  
 ## 3. Scoring
-* runSCC.py: calulate SCC scores for all models, and write to file scc.sc 
-* runRPF.py and getRPF.py: calculate RPF scores for all models, and write to file rpf.sc 
-* calcpLDDTscores.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
-* getScores.py: combine all scores
 
- ```
+* Input files:
+   - NMRdata (input to run RPF) 
+   - RCI1.csv (from RCI webserver, need to edit..., the sequence should match with input sequence for ESmodels)
+* Scripts:
+- runSCC.py: calulate SCC scores for all models, and write to file scc.sc 
+```
    > python ../scripts/runSCC.py RCI1.csv ESmodels > scc.sc
+```
+- runRPF.py and getRPF.py: calculate RPF scores for all models, and write to file rpf.sc 
+
+```
    > python ../scripts/runRPF.py ESmodels rpfESmodels
    > python ../scripts/getRPF.py rpfESmodels > rpf.sc  
+```
+- calcpLDDTscores.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
+
+```
    > python ../scripts/calcupLDDTscores.py ESmodels > pLDDT.sc 
-   > python ../scripts/getScores.py scc.sc rpf.sc pLDDT.sc cluster_pc_dm.csv > scores.all 
+```
+- getScores.py: combine all scores
+
+```
+   > python ../scripts/getScores.py scc.sc rpf.sc pLDDT.sc cluster_pc_dm.csv > scores.all    
 ```
 ## 4. State combination
 * selectModles.py: select models based on p(model|NMR) scores 

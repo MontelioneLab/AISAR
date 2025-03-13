@@ -24,7 +24,7 @@ https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 
 # AlphaFold-NMR Scripts with Demo (set working dir: CDK2AP1-doc1)
 
-## 1. enhancedSampling 
+## 1. AI EnhancedSampling 
 * run_afsample6000.sh 
    - need to modify the path to fit your local computer system
    - calculate 6000 models and also relax all 6000 models.  
@@ -61,13 +61,13 @@ https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 ### Download AFsample models
 https://zenodo.org/records/15015917 has 5984 models with one merged chain. Please unzip it and name it as CDK2AP1-doc1/ESmodels/ for the following analyse. 
 
-## 2. clustering
+## 2. Clustering
 * dmPCAClustering.R
     --> output: pc_dm_pdbs.RData, cluster_pc_dm.csv (in Rstudio, set the working dir to CDK2AP1-doc1 before running the R script) 
  
 We found that "ward methods" gives largest agglomerative coefficient. Number of clusters --> by viusal inspection of "Dendrogram" and pc plots to identify number of well-seperated clusters.  
  
-## 3. scoring
+## 3. Scoring
 * runSCC.py and getSCC.py: calulate SCC scores for all models, and write to file scc.sc 
 * runRPF.py and getRPF.py: calculate RPF scores for all models, and write to file rpf.sc 
 * calcpLDDTscores.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
@@ -82,14 +82,14 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
    > python ../scripts/calcupLDDTscores.py 
    > python ../scripts/getScores.py > scores.all 
 ```
-## 4. stateCombination
+## 4. StateCombination
 * selectModles.py: select models based on p(model|NMR) scores 
 
 ### CDK2AP1-doc1 example: 
 ```
  > sh ../scripts/selectModels.py scores.all ESmodels ".pdb"
 ```
-## 5. doubleRecall analysis 
+## 5. DoubleRecall analysis 
 
 # Other tools: 
 * RCItools -- tools we developed to generate SHIFTY input file to run RCI webserver 

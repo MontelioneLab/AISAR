@@ -87,6 +87,7 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
 ```
    > cd NMRdata (working at this directory) 
    > python ../../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels 
+   need to set the RPFcommand in the runRPF.py script 
    > python ../../scripts/getRPF.py rpfESmodels > rpf.sc  
 ```
  - calcpLDDTscores.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 

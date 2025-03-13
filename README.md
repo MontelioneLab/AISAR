@@ -77,7 +77,7 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
 ```
    > python ../scripts/runSCC.py RCI1.csv ESmodels > scc.sc
 ```
- - runRPF.py and getRPF.py: calculate RPF scores for all models, and write to file rpf.sc. A shorter version will be provided soon. 
+ - runRPF.py and getRPF.py: calculate RPF scores for all models, and write to file rpf.sc. The performance can be improved by skipping all output files and only keep the RPF scores ... comming soon. 
 
 ```
    > cd NMRdata (working at this directory) 

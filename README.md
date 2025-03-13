@@ -67,10 +67,11 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
  
 ## 3. Scoring
 
-* Input files:
+### Input files:
    - NMRdata (input to run RPF) 
    - RCI1.csv (from RCI webserver, need to edit..., the sequence should match with input sequence for ESmodels)
-* Scripts:
+
+### Scripts:
  - runSCC.py: calulate SCC scores for all models, and write to file scc.sc 
 ```
    > python ../scripts/runSCC.py RCI1.csv ESmodels > scc.sc

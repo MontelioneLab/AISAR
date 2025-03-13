@@ -65,19 +65,18 @@ https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 We found that "ward methods" gives largest agglomerative coefficient. Number of clusters --> by viusal inspection of "Dendrogram" and pc plots to identify number of well-seperated clusters.  
  
 ## 3. scoring
-* calcpLDDTscores.py
-  - get <pLDDT> scores for each model 
-* getScores.py
-  - combine all scores
+* runSCC.py and getSCC.py: get SCC scores for all models 
+* runRPF.py and getRPF.py: get RPF scores for all models 
+* calcpLDDTscores.py: get <pLDDT> scores for all models 
+* getScores.py: combine all scores
 
  ### CDK2AP1-doc1 example: input: scores.sc (from AFsample), pLDDT.sc (from calcpLDDTscores.py), scc.sc (from getSCC.py), rpf.sc(from getRPF.py), cluster_pc_dm.csv (from R clustering analysis)
    > sh ../scripts/getScores.py > scores.all 
 
 ## 4. stateCombination
-* selectModles.py
-  - select models based on p(model|NMR) scores 
+* selectModles.py: select models based on p(model|NMR) scores 
 
- ### CDK2AP1-doc1 example: 
+### CDK2AP1-doc1 example: 
  > sh ../scripts/selectModels.py scores.all ESmodels ".pdb"
 
 ## 5. doubleRecall analysis 

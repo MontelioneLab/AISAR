@@ -100,9 +100,10 @@ slow step - performance can be improved by only output recall, precision, f-meas
    > python ../scripts/getpLDDT.py ESmodels > pLDDT.sc 
 ```
  - getScores.py: combine all scores
-
+This script only works for models with the name "relaxed****.pdb" from AFsample. If your model name is different, you will need to change the script. 
+   
 ```
-   > python ../scripts/getScores.py scc.sc rpf.sc pLDDT.sc cluster_pc_dm.csv > scores.all    
+   > python ../scripts/getScores.py scores.sc pLDDT.sc scc.sc rpf.sc cluster_pc_dm.csv > scores.all    
 ```
 ## 4. State combination
 * selectModles.py: select models based on p(model|NMR) scores 

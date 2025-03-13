@@ -28,7 +28,7 @@ RCItools -- tools we developed to generate SHIFTY input file to run RCI webserve
 
 # AlphaFold-NMR Scripts 
 
-## enhancedSampling 
+## 1. enhancedSampling 
 * run_afsample6000.sh 
    - need to modify the path to fit your local computer system
    - calculate 6000 models and also relax all 6000 models.  
@@ -38,17 +38,17 @@ RCItools -- tools we developed to generate SHIFTY input file to run RCI webserve
    
 * FilterAF2.py: filters out bad models based on the AF log file. The python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
 
-## clustering
+## 2. clustering
 * dmPCAClustering.R
 
-## scoring
+## 3. scoring
 * calcpLDDTscores.py
 * getScores.py
 
-## stateCombination
+## 4. stateCombination
 * selectModles.py
 
-## doubleRecall analysis 
+## 5. doubleRecall analysis 
 
 
 # Demo - set working dir: CDK2AP1-doc1

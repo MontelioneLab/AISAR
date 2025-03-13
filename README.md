@@ -34,8 +34,8 @@ https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
    
 * FilterAF2.py: filters out bad models based on the AF log file. The python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
 
-
-### CDK2AP1-doc1 example: 
+```
+ CDK2AP1-doc1 example: 
   * doc1_noN.fasta: input fasta sequence. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid potential influence on the pTM and \<pLDDT\> scores. 
      
   Commands: 
@@ -57,7 +57,7 @@ https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
   ```
   
   This command finds all pdb file in the fileredModels, merge two chains (using mergeChain.py) and save them in the mergedModels directory. 
-  
+```  
 ### Download AFsample models
 https://zenodo.org/records/15015917 has 5984 models with one merged chain. Please unzip it and name it as CDK2AP1-doc1/ESmodels/ for the following analyse. 
 

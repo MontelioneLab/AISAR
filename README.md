@@ -34,7 +34,7 @@ https://github.com/bjornwallner/alphafoldv2.2.0
 
 *** all paths in the scripts need to be changed to your local path 
 
-## 1. AI Enhanced sampling with AFsample ()
+## 1. AI Enhanced sampling using AFsample
 * run_afsample6000.sh 
    - need to modify the path to fit your local computer system
    - calculate 6000 models and also relax all 6000 models.  

@@ -73,11 +73,11 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
 * getScores.py: combine all scores
 
  ```
-   > python ../scripts/runSCC.py > scc.sc
-   > python ../scripts/runRPF.py 
-   > python ../scripts/getRPF.py > rpf.sc  
-   > python ../scripts/calcupLDDTscores.py  > pLDDT.sc 
-   > python ../scripts/getScores.py > scores.all 
+   > python ../scripts/runSCC.py RCI1.csv ESmodels > scc.sc
+   > python ../scripts/runRPF.py ESmodels rpfESmodels
+   > python ../scripts/getRPF.py rpfESmodels > rpf.sc  
+   > python ../scripts/calcupLDDTscores.py ESmodels > pLDDT.sc 
+   > python ../scripts/getScores.py scc.sc rpf.sc pLDDT.sc cluster_pc_dm.csv > scores.all 
 ```
 ## 4. State combination
 * selectModles.py: select models based on p(model|NMR) scores 

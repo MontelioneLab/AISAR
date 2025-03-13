@@ -28,7 +28,7 @@ To run RPF, please download ASDP software here: https://github.rpi.edu/RPIBioinf
 ## RPF webserver
 For doubleRecall analysis: https://montelionelab.chem.rpi.edu/rpf/
 
-# AlphaFold-NMR Scripts with Demo
+# AlphaFold-NMR R and Python Scripts with Demo
 
 *** all paths in the scripts need to be changed to your local path 
 

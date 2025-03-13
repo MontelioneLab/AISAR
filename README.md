@@ -21,10 +21,6 @@ To run RPF, please download ASDP software here: https://github.rpi.edu/RPIBioinf
 ## RCI webserver 
 https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 
-RCItools -- tools we developed to generate SHIFTY input file to run RCI webserver 
-  * RPFtable2SHIFTY.py: convert the chemical shift file used by RPF (bmrbtable file) to SHIFTY format 
-  * nmrstar3toSHIFTY-fromBMRB.py: give the bmrb ID number, download chemical shift assignments from the BMRB database and convert to SHIFTY format
-  * nmrstar3toSHIFTY.py: convert the local bmrb file in nmrstart 3.0 format to SHIFTY format 
 
 # AlphaFold-NMR Scripts with Demo (set working dir: CDK2AP1-doc1)
 
@@ -86,8 +82,13 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
 
 ## 5. doubleRecall analysis 
 
-Other tools: 
-#
+# Other tools: 
+* RCItools -- tools we developed to generate SHIFTY input file to run RCI webserver 
+  - RPFtable2SHIFTY.py: convert the chemical shift file used by RPF (bmrbtable file) to SHIFTY format 
+  - nmrstar3toSHIFTY-fromBMRB.py: give the bmrb ID number, download chemical shift assignments from the BMRB database and convert to SHIFTY format
+  - nmrstar3toSHIFTY.py: convert the local bmrb file in nmrstart 3.0 format to SHIFTY format 
+* plotTools -- tools to make figures
+ 
 
 
 

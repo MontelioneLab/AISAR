@@ -107,12 +107,14 @@ This script only works for models with the name "relaxed****.pdb" from AFsample.
    > python ../scripts/getScores.py > scores.all 
 ```
 ## 4. State combination
-* selectModles.py: select models based on p(model|NMR) scores, create a cluster_diretory with top5 models from each cluster <br>
+* selectModles.py: select models based on p(model|NMR) scores, create a diretory with top5 models from each cluster <br>
    
 ``` 
- > sh ../scripts/selectModels.py scores.all ESmodels ".pdb"
- scores.all: output from step 3 - Scoring 
+ > sh ../scripts/selectModels.py scores.all ESmodels/ selectedModels/ > selectedModels.txt 
+ scores.all: output from step 3 - Scoring
 ```
+output: selectedModels.txt and selectedModels/ 
+   
 * R script for RMSF vs RCI stateCombination comparision (comming soon) 
    
 ## 5. Validation 

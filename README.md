@@ -50,7 +50,7 @@ https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
   Additional processing scripts: 
   
   Merge two chains into one chain for clustering analysis
-  > sh runMergedChain.py filteredModels mergedModels
+  > python ../scripts/runMergedChain.py filteredModels mergedModels
   
   This command finds all pdb file in the fileredModels, merge two chains (using mergeChain.py) and save them in the mergedModels directory. 
 ```  

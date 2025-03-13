@@ -7,8 +7,10 @@ Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione 
 # Software Requirements
 
 ## R Package: 
+```
 bio3d: http://thegrantlab.org/bio3d/
-
+cluster 
+```
 ## Python Dependences
 AF-NMR mainly depends on the Python scientifc stack
 
@@ -92,10 +94,10 @@ slow step - performance can be improved by only output recall, precision, f-meas
 ```
    output: NMRdata/rpfESmodels and NMRdata/rpf.sc 
    
-- calcpLDDTscores.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
+- getpLDDT.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
 
 ```
-   > python ../scripts/calcupLDDTscores.py ESmodels > pLDDT.sc 
+   > python ../scripts/getpLDDT.py ESmodels > pLDDT.sc 
 ```
  - getScores.py: combine all scores
 

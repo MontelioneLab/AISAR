@@ -70,7 +70,8 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
 * calcpLDDTscores.py: get <pLDDT> scores for all models 
 * getScores.py: combine all scores
 
- ### CDK2AP1-doc1 example: input: scores.sc (from AFsample), pLDDT.sc (from calcpLDDTscores.py), scc.sc (from getSCC.py), rpf.sc(from getRPF.py), cluster_pc_dm.csv (from R clustering analysis)
+ ### CDK2AP1-doc1 example: 
+   input: scores.sc (from AFsample), pLDDT.sc (from calcpLDDTscores.py), scc.sc (from getSCC.py), rpf.sc(from getRPF.py), cluster_pc_dm.csv (from R clustering analysis)
    > sh ../scripts/getScores.py > scores.all 
 
 ## 4. stateCombination

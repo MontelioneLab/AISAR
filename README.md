@@ -6,7 +6,7 @@ Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione 
 
 # Software Requirements
 
-## R Package: 
+## R Packages: 
 ```
 bio3d: http://thegrantlab.org/bio3d/
 cluster 

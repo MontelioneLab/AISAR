@@ -90,7 +90,8 @@ slow step - performance can be improved by only output recall, precision, f-meas
    need to set the RPFcommand in the runRPF.py script 
    > python ../../scripts/getRPF.py rpfESmodels > rpf.sc  
 ```
- - calcpLDDTscores.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
+   output: NMRdata/rpfESmodels and NMRdata/rpf.sc 
+- calcpLDDTscores.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
 
 ```
    > python ../scripts/calcupLDDTscores.py ESmodels > pLDDT.sc 

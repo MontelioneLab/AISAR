@@ -103,14 +103,15 @@ slow step - performance can be improved by only output recall, precision, f-meas
 This script only works for models with the name "relaxed****.pdb" from AFsample. If your model name is different, you will need to change the script. 
    
 ```
-   > python ../scripts/getScores.py scores.sc pLDDT.sc scc.sc rpf.sc cluster_pc_dm.csv > scores.all    
+   > python ../scripts/getScores.py scores.sc pLDDT.sc scc.sc rpf.sc cluster_pc_dm.csv > scores.all  
+   > python ../scripts/getScores.py > scores.all 
 ```
 ## 4. State combination
 * selectModles.py: select models based on p(model|NMR) scores, create a cluster_diretory with top5 models from each cluster <br>
    
 ``` 
  > sh ../scripts/selectModels.py scores.all ESmodels ".pdb"
- scores.all: output from step 3 - Scoreing 
+ scores.all: output from step 3 - Scoring 
 ```
 * R script for RMSF vs RCI stateCombination comparision (comming soon) 
    

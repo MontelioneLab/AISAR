@@ -34,11 +34,12 @@ https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
    
 * FilterAF2.py: filters out bad models based on the AF log file. The python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
 
-```
- CDK2AP1-doc1 example: 
-  * doc1_noN.fasta: input fasta sequence. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid potential influence on the pTM and \<pLDDT\> scores. 
+``` 
+  Input sequence for AlphaFold: doc1_noN.fasta. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid potential influence on the pTM and \<pLDDT\> scores. 
      
   Commands: 
+  > cd CDK2AP1-doc1 
+  
   > sbatch run_doc1_noN.sh (running with slrum) 
   This command calculates and relax all 6000 models using run_afsample6000.sh <br>
   The output models are here: AF_models_dropout/doc1_noN. pTM score is reported here: AF_models_dropout/scores.sc and log from AF: slurm-xxx.out 
@@ -69,7 +70,6 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
 * getScores.py: combine all scores
 
  ```
- ### CDK2AP1-doc1 example: 
    > python ../scripts/runSCC.py
    > python ../scripts/getSCC.py
    > python ../scripts/runRPF.py
@@ -80,7 +80,7 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
 ## 4. StateCombination
 * selectModles.py: select models based on p(model|NMR) scores 
 
-``` CDK2AP1-doc1 example: 
+``` 
  > sh ../scripts/selectModels.py scores.all ESmodels ".pdb"
 ```
 ## 5. DoubleRecall analysis 

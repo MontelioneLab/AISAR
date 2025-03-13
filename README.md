@@ -39,22 +39,17 @@ https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
   * doc1_noN.fasta: input fasta sequence. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid potential influence on the pTM and \<pLDDT\> scores. 
      
   Commands: 
-```
   > sbatch run_doc1_noN.sh (running with slrum) 
- ``` 
   This command calculates and relax all 6000 models using run_afsample6000.sh <br>
   The output models are here: AF_models_dropout/doc1_noN. pTM score is reported here: AF_models_dropout/scores.sc and log from AF: slurm-xxx.out 
-  ```
+  
   > python FilterAF2.py -log slurm-xxx.out -rel -inD AF_models_dropout/doc1_noN -outD filteredModels
-  ```
   This command filters out bad models based on the AF log file (e.g. slurm-xxx.out). 
 
   Additional processing scripts: 
   
   Merge two chains into one chain for clustering analysis
-  ```
   > sh runMergedChain.py filteredModels mergedModels
-  ```
   
   This command finds all pdb file in the fileredModels, merge two chains (using mergeChain.py) and save them in the mergedModels directory. 
 ```  
@@ -73,8 +68,8 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
 * calcpLDDTscores.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
 * getScores.py: combine all scores
 
- ### CDK2AP1-doc1 example: 
  ```
+ ### CDK2AP1-doc1 example: 
    > python ../scripts/runSCC.py
    > python ../scripts/getSCC.py
    > python ../scripts/runRPF.py
@@ -85,8 +80,7 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
 ## 4. StateCombination
 * selectModles.py: select models based on p(model|NMR) scores 
 
-### CDK2AP1-doc1 example: 
-```
+``` CDK2AP1-doc1 example: 
  > sh ../scripts/selectModels.py scores.all ESmodels ".pdb"
 ```
 ## 5. DoubleRecall analysis 

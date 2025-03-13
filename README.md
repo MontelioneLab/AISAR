@@ -83,7 +83,7 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
 ``` 
  > sh ../scripts/selectModels.py scores.all ESmodels ".pdb"
 ```
-## 5. DoubleRecall analysis 
+## 5. Validation 
 
 # Other tools: 
 * RCItools -- tools we developed to generate SHIFTY input file to run RCI webserver 

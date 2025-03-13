@@ -99,7 +99,7 @@ slow step - performance can be improved by only output recall, precision, f-meas
 ```
    > python ../scripts/getpLDDT.py ESmodels > pLDDT.sc 
 ```
- - getScores.py: combine all scores
+ - getScores.py: combine all scores. <br>
 This script only works for models with the name "relaxed****.pdb" from AFsample. If your model name is different, you will need to change the script. 
    
 ```

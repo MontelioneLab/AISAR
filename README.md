@@ -12,14 +12,19 @@ bio3d: http://thegrantlab.org/bio3d/
 ## Python Dependences
 AF-NMR mainly depends on the Python scientifc stack
 
+```
 numpy
 pandas
+```
+
+## RCI webserver 
+https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 
 ## ASDP/RPF
 To run RPF, please download ASDP software here: https://github.rpi.edu/RPIBioinformatics/ASDP_public
 
-## RCI webserver 
-https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
+## RPF webserver
+For doubleRecall analysis: https://montelionelab.chem.rpi.edu/rpf/
 
 # AlphaFold-NMR Scripts with Demo
 

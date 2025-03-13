@@ -69,7 +69,7 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
 
 ### Input files:
    - ESmodels: all ".pdb" files 
-   - NMRdata: input to run RPF
+   - NMRdata: input files to run RPF
    - RCI1.csv: from RCI webserver, the sequence was edited to match with merged sequence from ESmodels
 
 ### Scripts:
@@ -80,8 +80,9 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
  - runRPF.py and getRPF.py: calculate RPF scores for all models, and write to file rpf.sc 
 
 ```
-   > python ../scripts/runRPF.py ESmodels rpfESmodels
-   > python ../scripts/getRPF.py rpfESmodels > rpf.sc  
+   > cd NMRdata (working at this directory) 
+   > python ../../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels 
+   > python ../../scripts/getRPF.py rpfESmodels > rpf.sc  
 ```
  - calcpLDDTscores.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
 

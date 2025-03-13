@@ -39,7 +39,7 @@ RCItools -- tools we developed to generate SHIFTY input file to run RCI webserve
 * FilterAF2.py: filters out bad models based on the AF log file. The python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
 
 
-### Demo: 
+### CDK2AP1-doc1 example: 
   * doc1_noN.fasta: input fasta sequence. We exclude the long disordered tails and non-native tags from the input fasta sequence for AF modeling, to avoid potential influence on the pTM and \<pLDDT\> scores. 
      
   Commands: 
@@ -73,17 +73,21 @@ We found that "ward methods" gives largest agglomerative coefficient. Number of 
   - get <pLDDT> scores for each model 
 * getScores.py
   - combine all scores
-    Example: input: scores.sc (from AFsample), pLDDT.sc (from calcpLDDTscores.py), scc.sc (from getSCC.py), rpf.sc(from getRPF.py), cluster_pc_dm.csv (from R clustering analysis)
+
+ ### CDK2AP1-doc1 example: input: scores.sc (from AFsample), pLDDT.sc (from calcpLDDTscores.py), scc.sc (from getSCC.py), rpf.sc(from getRPF.py), cluster_pc_dm.csv (from R clustering analysis)
    > sh ../scripts/getScores.py > scores.all 
 
 ## 4. stateCombination
 * selectModles.py
   - select models based on p(model|NMR) scores 
-  > sh ../scripts/selectModels.py scores.all ESmodels ".pdb"
+
+ ### CDK2AP1-doc1 example: 
+ > sh ../scripts/selectModels.py scores.all ESmodels ".pdb"
 
 ## 5. doubleRecall analysis 
 
-
+Other tools: 
+#
 
 
 

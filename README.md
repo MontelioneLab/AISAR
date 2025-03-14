@@ -124,9 +124,8 @@ This script only works for models with the name "relaxed****.pdb" from AFsample.
  # sh ../scripts/selectModels.py scores.all ESmodels/ selectedModels/ > selectedModels.txt 
  scores.all: output from step 3 - Scoring
    
- plotScores.R: R plots of these scores 
+ plotScores.R: R plots of these scores used for top 5 model selection from each cluster
 ```
-   
 output: selectedModels.txt and selectedModels/ 
    
 * State combination is based on the SEM plot of RMSFvsRCI and CCC scores. 

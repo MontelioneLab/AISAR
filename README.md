@@ -149,6 +149,7 @@ For selected states, get RPF.zip file by runing RPF webserver (https://www.rando
 * group all pdb files in one directory into one pdb file
 R plots
 * pLDDT_RCIplot.R
+* plotScores.R 
    
  
 

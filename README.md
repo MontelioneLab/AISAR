@@ -98,7 +98,6 @@ slow step - performance can be improved by only output recall, precision, f-meas
 ```
    working directory: NMRdata
    > python ../../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels 
-   * Runtime: seconds for one model)
    need to set the RPFcommand in the runRPF.py script 
    > python ../../scripts/getRPF.py rpfESmodels > rpf.sc  
 ```

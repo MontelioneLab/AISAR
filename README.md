@@ -4,31 +4,31 @@ Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione 
 
 <img width="1161" alt="flowChart" src="https://media.github.rpi.edu/user/352/files/b6534f5c-e03d-4529-a4a5-bbc697c9db04">
 
-No required non-standard hardware 
+## No required non-standard hardware 
 
-# Software Requirements
+## Software Requirements
 
-## R Packages: 
+### R Packages: 
 ```
 bio3d: http://thegrantlab.org/bio3d/
 cluster 
 ```
-## Python Dependences
+### Python Dependences
 ```
 numpy
 pandas
 ```
 
-## RCI webserver 
+### RCI webserver 
 https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 
-## ASDP/RPF  
+### ASDP/RPF  
 To run RPF, please download ASDP software here: https://github.rpi.edu/RPIBioinformatics/ASDP_public
 
-## RPF webserver (runtime: seconds) 
+### RPF webserver
 For doubleRecall analysis: https://montelionelab.chem.rpi.edu/rpf/
 
-## AFsample
+### AFsample
 https://github.com/bjornwallner/alphafoldv2.2.0
 
 # AlphaFold-NMR R and Python Scripts with Demo

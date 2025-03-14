@@ -130,9 +130,9 @@ output: selectedModels.txt and selectedModels/
    
 ## 5. Validation 
 
-* comparing ensemble A vs ensemble B:
+* DoubleRecall - ensemble A vs ensemble B:
    
-* comparing ensemble A vs ensembles B1+B2: 
+* DoubleRecall - ensemble A vs ensembles B1+B2: 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ)https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ   
    
 # Other tools: 

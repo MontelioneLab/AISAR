@@ -115,7 +115,7 @@ This script only works for models with the name "relaxed****.pdb" from AFsample.
    
 ```
    # python ../scripts/getScores.py scores.sc pLDDT.sc scc.sc rpf.sc cluster_pc_dm.csv > scores.all  
-   # python ../scripts/getScores.py > scores.all 
+   # python ../scripts/getScores.py > scores.all (as default, this command will also readin the above files)
 ```
 ## 4. State combination
 * selectModles.py: select models based on p(model|NMR) scores, create a diretory with top5 models from each cluster <br>

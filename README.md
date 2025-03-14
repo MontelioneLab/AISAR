@@ -126,7 +126,8 @@ This script only works for models with the name "relaxed****.pdb" from AFsample.
 ```
 output: selectedModels.txt and selectedModels/ 
    
-* R script for RMSF vs RCI stateCombination comparision (comming soon) 
+* Final state combination is based on the SEM plot of RMSFvsRCI and CCC scores. 
+example R code: CDK2AP1-doc1/RMSF_RCIplot.R 
    
 ## 5. Validation 
 

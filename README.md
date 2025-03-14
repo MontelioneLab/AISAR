@@ -124,10 +124,8 @@ output: selectedModels.txt and selectedModels/
 * comparing ensemble A vs ensemble B:
    
 * comparing ensemble A vs ensembles B1+B2: 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg) https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ
-   
-   
-   
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0S)
+      
 # Other tools: 
 * RCItools -- tools we developed to generate SHIFTY input file to run RCI webserver 
   - RPFtable2SHIFTY.py: convert the chemical shift file used by RPF (bmrbtable file) to SHIFTY format 

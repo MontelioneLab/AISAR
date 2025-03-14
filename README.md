@@ -123,7 +123,10 @@ This script only works for models with the name "relaxed****.pdb" from AFsample.
 ``` 
  # sh ../scripts/selectModels.py scores.all ESmodels/ selectedModels/ > selectedModels.txt 
  scores.all: output from step 3 - Scoring
+   
+ plotScores.R: R plots of these scores 
 ```
+   
 output: selectedModels.txt and selectedModels/ 
    
 * State combination is based on the SEM plot of RMSFvsRCI and CCC scores. 
@@ -149,7 +152,6 @@ For selected states, get RPF.zip file by runing RPF webserver (https://www.rando
 * group all pdb files in one directory into one pdb file
 R plots
 * pLDDT_RCIplot.R
-* plotScores.R 
    
  
 

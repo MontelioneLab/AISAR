@@ -141,12 +141,12 @@ For selected states, get RPF.zip file by runing RPF webserver (https://www.rando
 * DoubleRecall - ensemble A vs ensembles B1+B2: 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ)https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ   
    
-# Other tools: 
+# Other codes that may be useful: 
 * RCItools -- tools we developed to generate SHIFTY input file to run RCI webserver 
   - RPFtable2SHIFTY.py: convert the chemical shift file used by RPF (bmrbtable file) to SHIFTY format 
   - nmrstar3toSHIFTY-fromBMRB.py: give the bmrb ID number, download chemical shift assignments from the BMRB database and convert to SHIFTY format
   - nmrstar3toSHIFTY.py: convert the local bmrb file in nmrstart 3.0 format to SHIFTY format 
-* plotTools -- tools to make figures
+* group all pdb files in one directory into one pdb file
  
 
 

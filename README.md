@@ -22,7 +22,7 @@ pandas
 ### RCI webserver for RCI and SCC calculation
 https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 
-### ASDP/RPF for Recall calculation
+### ASDP/RPF for Recall calculation in batch mode 
 https://github.rpi.edu/RPIBioinformatics/ASDP_public
 
 ### RPF webserver for DoubleRecall analysis 

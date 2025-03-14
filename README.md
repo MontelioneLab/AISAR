@@ -120,7 +120,9 @@ output: selectedModels.txt and selectedModels/
 * R script for RMSF vs RCI stateCombination comparision (comming soon) 
    
 ## 5. Validation 
-
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RPIBioinformatics/AlphaFold-NMR/blob/main/notebooks/DoubleRecall-v3.ipynb)
+   
+   
 # Other tools: 
 * RCItools -- tools we developed to generate SHIFTY input file to run RCI webserver 
   - RPFtable2SHIFTY.py: convert the chemical shift file used by RPF (bmrbtable file) to SHIFTY format 

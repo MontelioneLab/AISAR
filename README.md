@@ -4,6 +4,8 @@ Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione 
 
 <img width="1161" alt="flowChart" src="https://media.github.rpi.edu/user/352/files/b6534f5c-e03d-4529-a4a5-bbc697c9db04">
 
+# No required non-standard hardware. 
+
 # Software Requirements
 
 ## R Packages: 
@@ -20,24 +22,27 @@ pandas
 ## RCI webserver 
 https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 
-## ASDP/RPF
+## ASDP/RPF  
 To run RPF, please download ASDP software here: https://github.rpi.edu/RPIBioinformatics/ASDP_public
 
-## RPF webserver
+## RPF webserver (runtime: seconds) 
 For doubleRecall analysis: https://montelionelab.chem.rpi.edu/rpf/
 
 ## AFsample
 https://github.com/bjornwallner/alphafoldv2.2.0
 
-
 # AlphaFold-NMR R and Python Scripts with Demo
+
+Typical install times are several minutes. 
 
 *** all paths in the scripts need to be changed to your local path 
 
-## 1. AI Enhanced sampling using AFsample
+## 1. AI Enhanced sampling using AFsample 
 * run_afsample6000.sh 
    - need to modify the path to fit your local computer system
-   - calculate 6000 models and also relax all 6000 models.  
+   - calculate 6000 models and also relax all 6000 models.
+     
+Runtime: it can take day(s) to calculate 6000 models, depending on the size of the sequence and number of GPUs
 
 * mergeChain.py and runMergedChain.py
    - merge two chains into one chain for PCA analysis 
@@ -73,7 +78,9 @@ https://zenodo.org/records/15015917 has 5984 models with one merged chain. Pleas
     --> output: pc_dm_pdbs.RData, cluster_pc_dm.csv (in Rstudio, set the working dir to CDK2AP1-doc1 before running the R script) 
  
 We use "ward methods". To identify number of clusters --> by inspection of "Dendrogram" and pc plots.  
- 
+
+Runtime: it can take hours (s) to clustering 6000 models, depending on the size of the sequence and number of GPUs
+
 ## 3. Scoring
 
 ### Input files:
@@ -91,9 +98,11 @@ slow step - performance can be improved by only output recall, precision, f-meas
 ```
    working directory: NMRdata
    > python ../../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels 
+   * Runtime: seconds for one model)
    need to set the RPFcommand in the runRPF.py script 
    > python ../../scripts/getRPF.py rpfESmodels > rpf.sc  
 ```
+   Runtime: mintues to hours for 6000 models, depends on the size of the protein sequence  
    output: NMRdata/rpfESmodels and NMRdata/rpf.sc 
    
 - getpLDDT.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 

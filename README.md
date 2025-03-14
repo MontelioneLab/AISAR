@@ -35,7 +35,7 @@ https://github.com/bjornwallner/alphafoldv2.2.0
 
 Typical install times are several minutes. 
 
-*** all paths in the scripts need to be changed to your local path 
+*** all paths in the scripts need to be changed to your local computer environment 
 
 ## 1. AI Enhanced sampling using AFsample 
 * run_afsample6000.sh 

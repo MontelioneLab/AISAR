@@ -133,7 +133,7 @@ output: selectedModels.txt and selectedModels/
 example R code: CDK2AP1-doc1/RMSF_RCIplot.R 
 ```
    
-## 5. Validation 
+## 5. Validation by DoubleRecall analysis
 
 For selected states, get RPF.zip file by runing RPF webserver (https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py) 
    

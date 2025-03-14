@@ -19,16 +19,16 @@ numpy
 pandas
 ```
 
-### RCI webserver 
+### RCI webserver for RCI and SCC calculation
 https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 
-### ASDP/RPF  
-To run RPF, please download ASDP software here: https://github.rpi.edu/RPIBioinformatics/ASDP_public
+### ASDP/RPF for Recall calculation
+https://github.rpi.edu/RPIBioinformatics/ASDP_public
 
-### RPF webserver
-For doubleRecall analysis: https://montelionelab.chem.rpi.edu/rpf/
+### RPF webserver for DoubleRecall analysis 
+https://montelionelab.chem.rpi.edu/rpf/
 
-### AFsample
+### AFsample for enhanced sampling 
 https://github.com/bjornwallner/alphafoldv2.2.0
 
 # AlphaFold-NMR R and Python Scripts with Demo

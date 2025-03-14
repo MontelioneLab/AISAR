@@ -120,7 +120,7 @@ output: selectedModels.txt and selectedModels/
 * R script for RMSF vs RCI stateCombination comparision (comming soon) 
    
 ## 5. Validation 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RPIBioinformatics/AlphaFold-NMR/blob/main/notebooks/DoubleRecall-v3.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github.rpi.edu/RPIBioinformatics/AlphaFold-NMR/blob/main/notebooks/DoubleRecall-v3.ipynb)
    
    
 # Other tools: 

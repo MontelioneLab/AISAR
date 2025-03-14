@@ -120,6 +120,12 @@ output: selectedModels.txt and selectedModels/
 * R script for RMSF vs RCI stateCombination comparision (comming soon) 
    
 ## 5. Validation 
+
+* comparing ensemble A vs ensemble B:
+   
+* comparing ensemble A vs ensembles B1+B2: 
+https://drive.google.com/file/d/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ/view?usp=sharing
+   
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/raw.github.rpi.edu/RPIBioinformatics/AlphaFold-NMR/blob/main/notebooks/DoubleRecall-v3.ipynb)
    
    

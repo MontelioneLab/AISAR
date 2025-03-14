@@ -4,7 +4,7 @@ Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione 
 
 <img width="1161" alt="flowChart" src="https://media.github.rpi.edu/user/352/files/b6534f5c-e03d-4529-a4a5-bbc697c9db04">
 
-# No required non-standard hardware. 
+No required non-standard hardware 
 
 # Software Requirements
 

@@ -54,19 +54,20 @@ Runtime: it can take day(s) to calculate 6000 models, depending on the size of t
   We excluded the long disordered tails and non-native tags from the input fasta sequence for AlphaFold modeling, to avoid potential influence on the pTM and <pLDDT> scores. 
      
   Commands: 
-  > cd CDK2AP1-doc1 (set working dir: CDK2AP1-doc1)
   
-  > sbatch run_doc1_noN.sh (running with slrum) 
+  #cd CDK2AP1-doc1 (set working dir: CDK2AP1-doc1)
+  
+  sbatch run_doc1_noN.sh (running with slrum) 
   This command calculates and relax all 6000 models using run_afsample6000.sh <br>
   The output models are here: AF_models_dropout/doc1_noN. pTM score is reported here: AF_models_dropout/scores.sc and log from AF: slurm-xxx.out 
   
-  > python FilterAF2.py -log slurm-xxx.out -rel -inD AF_models_dropout/doc1_noN -outD filteredModels
+  # python FilterAF2.py -log slurm-xxx.out -rel -inD AF_models_dropout/doc1_noN -outD filteredModels
   This command filters out bad models based on the AF log file (e.g. slurm-xxx.out). 
 
   Additional processing scripts: 
   
   Merge two chains into one chain for clustering analysis
-  > python ../scripts/runMergedChain.py filteredModels mergedModels
+  # python ../scripts/runMergedChain.py filteredModels mergedModels
   
   This command finds all pdb file in the fileredModels, merge two chains (using mergeChain.py) and save them in the mergedModels directory. 
 ```  
@@ -91,15 +92,15 @@ Runtime: it can take hours (s) to clustering 6000 models, depending on the size 
 ### Scripts:
  - runSCC.py: calulate SCC scores for all models, and write to file scc.sc 
 ```
-   > python ../scripts/runSCC.py RCI1.csv ESmodels > scc.sc
+   # python ../scripts/runSCC.py RCI1.csv ESmodels > scc.sc
 ```
  - runRPF.py and getRPF.py: calculate RPF scores for all models, and write to file rpf.sc. 
 slow step - performance can be improved by only output recall, precision, f-measure and dp scores and skips others. 
 ```
    working directory: NMRdata
-   > python ../../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels 
+   # python ../../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels 
    need to set the RPFcommand in the runRPF.py script 
-   > python ../../scripts/getRPF.py rpfESmodels > rpf.sc  
+   # python ../../scripts/getRPF.py rpfESmodels > rpf.sc  
 ```
    Runtime: mintues to hours for 6000 models, depends on the size of the protein sequence  
    output: NMRdata/rpfESmodels and NMRdata/rpf.sc 
@@ -107,20 +108,20 @@ slow step - performance can be improved by only output recall, precision, f-meas
 - getpLDDT.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
 
 ```
-   > python ../scripts/getpLDDT.py ESmodels > pLDDT.sc 
+   # python ../scripts/getpLDDT.py ESmodels > pLDDT.sc 
 ```
  - getScores.py: combine all scores. <br>
 This script only works for models with the name "relaxed****.pdb" from AFsample. If your model name is different, you will need to change the script. 
    
 ```
-   > python ../scripts/getScores.py scores.sc pLDDT.sc scc.sc rpf.sc cluster_pc_dm.csv > scores.all  
-   > python ../scripts/getScores.py > scores.all 
+   # python ../scripts/getScores.py scores.sc pLDDT.sc scc.sc rpf.sc cluster_pc_dm.csv > scores.all  
+   # python ../scripts/getScores.py > scores.all 
 ```
 ## 4. State combination
 * selectModles.py: select models based on p(model|NMR) scores, create a diretory with top5 models from each cluster <br>
    
 ``` 
- > sh ../scripts/selectModels.py scores.all ESmodels/ selectedModels/ > selectedModels.txt 
+ # sh ../scripts/selectModels.py scores.all ESmodels/ selectedModels/ > selectedModels.txt 
  scores.all: output from step 3 - Scoring
 ```
 output: selectedModels.txt and selectedModels/ 

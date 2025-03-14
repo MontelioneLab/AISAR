@@ -129,6 +129,8 @@ output: selectedModels.txt and selectedModels/
    
 ## 5. Validation 
 
+For selected states, get RPF.zip file by runing RPF webserver (https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py) 
+   
 * DoubleRecall - ensemble A vs ensemble B:
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1IPXZVDdxG1xpn-6tgIErWJOSLa9Rx87A)https://colab.research.google.com/drive/1IPXZVDdxG1xpn-6tgIErWJOSLa9Rx87A
    

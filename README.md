@@ -123,7 +123,7 @@ This script only works for models with the name "relaxed****.pdb" from AFsample.
 ``` 
  # python ../scripts/selectModels.py scores.all ESmodels/ selectedModels/ > selectedModels.log 
 ```
-input: scores.all: output from step 3 - Scoring
+input: scores.all: output from step 3 - Scoring <br>
 output: selectedModels.log and selectedModels/ 
    
 ```

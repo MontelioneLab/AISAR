@@ -104,10 +104,6 @@ axis(4, at = 0.5:10.5, labels = round(score, 2), las = 1)
 
 ###pLDDt*SCC
 
-#score <- df$pLDDT * df$SCC * -1
-#score[score < 0] <- 0  # Replace negative values with 0 to avoid NaN
-
-
 df2 <- df[order(sqrt(df$pLDDT/100 * df$SCC * -1)), ]  # Sort by the transformed score
 pRCI <- sqrt(df2$pLDDT/100 * df2$SCC*-1)
 mycol<-map2color(pRCI,brewer.pal(10, "Spectral"))
@@ -145,3 +141,4 @@ par(mar = c(0, 0, 2, 0))
 score <- seq(min(pNMR),max(pNMR),length.out=11)
 image(1, 1:10, t(matrix(1:10)), col = brewer.pal(10, "Spectral"), axes = FALSE)
 axis(4, at = 0.5:10.5, labels = round(score, 2), las = 1)
+

@@ -102,7 +102,7 @@ slow step - performance can be improved by only output recall, precision, f-meas
    need to set the RPFcommand in the runRPF.py script 
    # python ../../scripts/getRPF.py rpfESmodels > rpf.sc  
 ```
-   Runtime: mintues to hours for 6000 models, depends on the size of the protein sequence  
+   Runtime: minutes to hours for 6000 models, depends on the size of the protein sequence  
    output: NMRdata/rpfESmodels and NMRdata/rpf.sc 
    
 - getpLDDT.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
@@ -114,7 +114,7 @@ slow step - performance can be improved by only output recall, precision, f-meas
 This script only works for models with the name "relaxed****.pdb" from AFsample. If your model name is different, you will need to change the script. 
    
 ```
-   # python ../scripts/getScores.py scores.sc pLDDT.sc scc.sc rpf.sc cluster_pc_dm.csv > scores.all  
+   # python ../scripts/getScores.py scores.sc pLDDT.sc scc.sc NMRdata/rpf.sc cluster_pc_dm.csv > scores.all  
    # python ../scripts/getScores.py > scores.all (as default, this command will also readin the above files)
 ```
 ## 4. State combination

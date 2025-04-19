@@ -158,7 +158,7 @@ For selected states, get RPF.zip file by runing RPF webserver (https://www.rando
   - RPFtable2SHIFTY.py: convert the chemical shift file used by RPF (bmrbtable file) to SHIFTY format 
   - nmrstar3toSHIFTY-fromBMRB.py: give the bmrb ID number, download chemical shift assignments from the BMRB database and convert to SHIFTY format
   - nmrstar3toSHIFTY.py: convert the local bmrb file in nmrstart 3.0 format to SHIFTY format 
-* group all pdb files in one directory into one pdb file
+
 R plots
 * pLDDT_RCIplot.R
    

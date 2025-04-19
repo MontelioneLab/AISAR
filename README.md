@@ -125,7 +125,8 @@ This script only works for models with the name "relaxed****.pdb" from AFsample.
 ```
 input: scores.all: output from step 3 - Scoring <br>
 output: selectedModels.log and selectedModels/ 
-   
+
+* groupModels.py: group all pdb files in one directory into one pdb file 
 ```
  plots: plotScores.R: R plots of these scores for model selection 
 ```

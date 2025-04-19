@@ -53,12 +53,12 @@ axis(4, at = 0.5:10.5, labels = round(score, 3), las = 1)
 df2=df[order(sqrt(df$pTM*(df$Recall-min(df$Recall))/(max(df$Recall)-min(df$Recall)))), ] #color by the score
 
 pNOE = sqrt((df2$Recall-min(df$Recall))/(max(df$Recall)-min(df$Recall))*df2$pTM)
-                                        
+
 mycol<-map2color(pNOE, brewer.pal(10, "Spectral"))
 
 par(fig = c(0.66, 0.92, 0.67, 1.0), new=TRUE)  # Position inside subplot
 par(mar=c(4,4,2,0.5))
-plot(df2$PCA1, df2$PCA2, mgp=c(2,1,0), main="p(model|NOE)", pch=20, cex=df2$pTM*df2$pTM*2, xlab="PC1", ylab="PC2", col=mycol) 
+plot(df2$PCA1, df2$PCA2, mgp=c(2,1,0), main="pNOE", pch=20, cex=df2$pTM*df2$pTM*2, xlab="PC1", ylab="PC2", col=mycol) 
 
 par(fig = c(0.92, 0.93, 0.75, 1.0), new=TRUE)  # Position inside subplot
 par(mar = c(0, 0, 2, 0))
@@ -115,7 +115,7 @@ mycol<-map2color(pRCI,brewer.pal(10, "Spectral"))
 par(fig = c(0.66, 0.92, 0.34, 0.67), new=TRUE)  # Position inside subplot
 par(mar=c(4,4,2,0.5))
 
-plot(df2$PCA1, df2$PCA2, mgp=c(2,1,0), pch=20, main="p(model|RCI)", cex=df2$pTM*df2$pTM*2, xlab="PC1", ylab="PC2", col=mycol) 
+plot(df2$PCA1, df2$PCA2, mgp=c(2,1,0), pch=20, main="pRCI", cex=df2$pTM*df2$pTM*2, xlab="PC1", ylab="PC2", col=mycol) 
 
 par(fig = c(0.92, 0.93, 0.42, 0.67), new=TRUE)  # Position inside subplot
 par(mar = c(0, 0, 2, 0))
@@ -128,13 +128,16 @@ axis(4, at = 0.5:10.5, labels = round(score, 2), las = 1)
 ### overall
 df2=df[order(sqrt((df$Recall-min(df$Recall))/((max(df$Recall)-min(df$Recall))*df$pTM)) + sqrt(df$pLDDT*df$SCC/100*-1)), ] #color by the score
 
+pRCI <- sqrt(df2$pLDDT/100 * df2$SCC*-1)
+pNOE = sqrt((df2$Recall-min(df$Recall))/(max(df$Recall)-min(df$Recall))*df2$pTM)
+
 pNMR = (pNOE+pRCI)/2
 mycol<-map2color(pNMR,brewer.pal(10, "Spectral"))
 
 par(fig = c(0, 0.26, 0, 0.34), new=TRUE)  # Position inside subplot
 par(mar=c(4,4,2,0.5))
 
-plot(df2$PCA1, df2$PCA2, mgp=c(2,1,0), main="p(model|NMR)", pch=20, cex=df2$pTM*df2$pTM*2, xlab="PC1", ylab="PC2", col=mycol) 
+plot(df2$PCA1, df2$PCA2, mgp=c(2,1,0), main="pNMR", pch=20, cex=df2$pTM*df2$pTM*2, xlab="PC1", ylab="PC2", col=mycol) 
 
 par(fig = c(0.26, 0.27, 0.08, 0.34), new=TRUE)  # Position inside subplot
 par(mar = c(0, 0, 2, 0))
@@ -142,5 +145,3 @@ par(mar = c(0, 0, 2, 0))
 score <- seq(min(pNMR),max(pNMR),length.out=11)
 image(1, 1:10, t(matrix(1:10)), col = brewer.pal(10, "Spectral"), axes = FALSE)
 axis(4, at = 0.5:10.5, labels = round(score, 2), las = 1)
-
-

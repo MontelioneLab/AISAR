@@ -121,7 +121,7 @@ This script only works for models with the name "relaxed****.pdb" from AFsample.
 * selectModles.py: select models based on p(model|NMR) scores, create a diretory with top5 models from each cluster <br>
    
 ``` 
- # python ../scripts/selectModels.py scores.all ESmodels/ selectedModels/ > selectedModels.txt 
+ # python ../scripts/selectModels.py scores.all ESmodels/ selectedModels/ > selectedModels.log 
  scores.all: output from step 3 - Scoring
    
  plotScores.R: R plots of these scores used for top 5 model selection from each cluster

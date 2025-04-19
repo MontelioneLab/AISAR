@@ -10,7 +10,7 @@ def print_usage():
     print("\nArguments:")
     print("  <dir>         Directory containing .pdb ")
     print("\nExample:")
-    print("  python groupModels.py selectedModels/a1)
+    print("  python groupModels.py selectedModels/a1")
     sys.exit(1)
 
 # Check for --help or incorrect usage

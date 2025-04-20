@@ -12,8 +12,7 @@ coreIndex = c(l1, l2)
 #working directory: CDK2AP-doc1
 
 a_affiles <- list.files("output/selectedModels/a1/", pattern=".pdb", full.names=TRUE)    
-a_pdbfiles <-pdbsplit(a_affiles, ncore=10)
-a_pdbs <- pdbaln(a_pdbfiles, super5=TRUE, ncore=10)
+a_pdbs <- pdbaln(a_affiles, super5=TRUE, ncore=10)
 a_pdbs.aa <- read.all(a_pdbs)
 xyzA <- a_pdbs$xyz
 ca.inds <- atom.select(a_pdbs, elety="CA", resno=coreIndex)
@@ -22,8 +21,7 @@ rA <- rmsf(xyzA)
 
 
 b_affiles <- list.files("output/selectedModels/b2/", pattern=".pdb", full.names=TRUE)    
-b_pdbfiles <-pdbsplit(b_affiles, ncore=10)
-b_pdbs <- pdbaln(b_pdbfiles, super5=TRUE, ncore=10)
+b_pdbs <- pdbaln(b_affiles, super5=TRUE, ncore=10)
 b_pdbs.aa <- read.all(b_pdbs)
 xyzB <- b_pdbs$xyz
 ca.inds <- atom.select(b_pdbs, elety="CA", resno=coreIndex)
@@ -31,7 +29,7 @@ xyzB <- fit.xyz(xyzB[1, ], xyzB, fixed.inds=ca.inds$xyz,mobile.inds=ca.inds$xyz)
 rB <- rmsf(xyzB)
 
 #combine A/B
-ab_pdbs <- pdbaln(c(a_pdbfiles, b_pdbfiles), super5=TRUE, ncore=10)
+ab_pdbs <- pdbaln(c(a_affiles, b_affiles), super5=TRUE, ncore=10)
 ab_pdbs.aa <- read.all(ab_pdbs)
 xyzAB <- ab_pdbs$xyz
 ca.inds <- atom.select(ab_pdbs, elety="CA", resno=coreIndex)
@@ -78,8 +76,6 @@ rect(85, 0.3, 111, 0.35, col="orange", border="NA") #helix
 
 lines(rci_df$Number+60, rciA_rmsf, col="blue", type="s", lwd=2) # group a
 lines(rci_df$Number+60, rci_rmsf, col="purple", type="s", lwd=2) # group a
-#lines(rci_df$Number[1:55]+60, rciNMR_rmsf, col="grey", type="s", lwd=2, lty=5) # group a
-
 
 abline(h=mD, col="grey", lty=3, lwd=2)
 abline(h=mD+12.71*SEM, col="grey", lty=3, lwd=2)

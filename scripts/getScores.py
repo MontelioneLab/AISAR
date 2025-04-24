@@ -1,7 +1,6 @@
-#!python
-
 import re
-import sys 
+import sys
+import csv
 
 # Default file names
 default_scores_file = "scores.sc"
@@ -11,7 +10,6 @@ default_rpf_file = "rpf.sc"
 default_pca_file = "cluster_pc_dm.csv"
 
 def print_usage():
-    """Prints usage instructions for the script."""
     print("\nUsage: python getScores.py [scores.sc] [pLDDT.sc] [scc.sc] [rpf.sc] [cluster_pc_dm.csv]")
     print("\nArguments:")
     print("  scores.sc         (optional) Default: scores.sc")
@@ -27,16 +25,13 @@ def print_usage():
 # Check for "--help" or incorrect usage
 if "--help" in sys.argv or "-h" in sys.argv:
     print_usage()
-    
+
 # Use command-line arguments if provided, otherwise use default values
 scores_file = sys.argv[1] if len(sys.argv) > 1 else default_scores_file
 pLDDT_file = sys.argv[2] if len(sys.argv) > 2 else default_pLDDT_file
 scc_file = sys.argv[3] if len(sys.argv) > 3 else default_scc_file
 rpf_file = sys.argv[4] if len(sys.argv) > 4 else default_rpf_file
 pca_file = sys.argv[5] if len(sys.argv) > 5 else default_pca_file
-
-#print(f"Using files:\n  - pTM: {scores_file}\n  - pLDDT: {pLDDT_file}\n  - SCC: {scc_file}\n  - RPF: {rpf_file}\n  - PCA: {pca_file}")
-
 
 pTM = {}
 dp = {}
@@ -49,60 +44,49 @@ pLDDT = {}
 grp = {}
 scc = {}
 
-
-with open("scores.sc") as f:
+with open(scores_file) as f:
     for line in f:
-        result = re.search(r"result_([\w|\_|\d]+)\.pkl\s+(\d+\.\d+)", line)
+        result = re.search(r"result_([\w\_\d]+)\.pkl\s+(\d+\.\d+)", line)
         if result:
             pTM[result.group(1)] = result.group(2)
 
-with open("pLDDT.sc") as f:
+with open(pLDDT_file) as f:
     for line in f:
-        result = re.search(r"relaxed_([\w|\_|\d]+)\.pdb\s+(\d+\.\d+)", line)
-        name = re.sub(r'_new', '', result.group(1))
+        result = re.search(r"relaxed_([\w\_\d]+)\.pdb\s+(\d+\.\d+)", line)
         if result:
+            name = re.sub(r'_new', '', result.group(1))
             pLDDT[name] = result.group(2)
 
-with open("scc.sc") as f:
+with open(scc_file) as f:
     for line in f:
-        result = re.search(r"relaxed_([\w|\_|\d]+)\.pdb\s+(-*\d+\.\d+)", line)
-        name = re.sub(r'_new', '', result.group(1))
+        result = re.search(r"relaxed_([\w\_\d]+)\.pdb\s+(-*\d+\.\d+)", line)
         if result:
+            name = re.sub(r'_new', '', result.group(1))
             scc[name] = result.group(2)
 
-with open("rpf.sc") as f:
+with open(rpf_file) as f:
     for line in f:
-        result = re.search(r"relaxed_([\w|\_|\d]+)\.pdb\s+(\d+\.\d+)\s+(\d+\.\d+)\s+(\d+\.\d+)", line)
-        name = re.sub(r'_new', '', result.group(1))
+        result = re.search(r"relaxed_([\w\_\d]+)\.pdb\s+(\d+\.\d+)\s+(\d+\.\d+)\s+(\d+\.\d+)", line)
         if result:
-            #print(result.group(1), result.group(2))
+            name = re.sub(r'_new', '', result.group(1))
             recall[name] = result.group(2)
             precision[name] = result.group(3)
             dp[name] = result.group(4)
-            
-with open("cluster_pc_dm.csv") as f:
-    for line in f:
-        result = re.search(r"[relaxed_]*([\w\d_]+)\.pdb,(-*\d+\.\d+),(-*\d+\.\d+),(-*\d+\.\d+),(\d)", line)
-        name = re.sub(r'_new', '', result.group(1))
-        if result:
-            pca1[name] = result.group(2) 
-            pca2[name] = result.group(3)
-            pca3[name] = result.group(4) 
-            grp[name] = result.group(5)
 
-print("MODEL   pTM     pLDDT   PCA1    PCA2    PCA3    Recall  DP      SCC     Cluster")
+with open(pca_file) as f:
+    reader = csv.reader(f)
+    for row in reader:
+        result = re.match(r"split_chain/(?:relaxed_)?([\w\d_]+)\.pdb", row[0])
+        name = re.sub(r'_new_A', '', result.group(1))
+        name = re.sub(r'_A', '', name)
+        if result:
+            pca1[name] = row[1]
+            pca2[name] = row[2]
+            pca3[name] = row[3]
+            grp[name] = row[4]
+
+print(f"{'MODEL':<40} {'pTM':>7} {'pLDDT':>7} {'PCA1':>7} {'PCA2':>7} {'PCA3':>7} {'Recall':>7} {'DP':>7} {'SCC':>7} {'Cluster':<7}")
 for name in pca1.keys():
-    print(
-        name,
-        pTM.get(name, -1),  # Default to -1 if missing
-        pLDDT.get(name, -1),
-        pca1.get(name, -1),
-        pca2.get(name, -1),
-        pca3.get(name, -1),
-        recall.get(name, 1), # NA to 1 
-        dp.get(name, 1), # NA to 1
-        scc.get(name, 1), # NA to 1 
-        grp.get(name, -1), 
-    )
-        
-        
+    print(f"{name:<40} {float(pTM.get(name, -1.0)):7.3f} {float(pLDDT.get(name, -1.0)):7.3f} {float(pca1.get(name, -1.0)):7.3f} "
+          f"{float(pca2.get(name, -1.0)):7.3f} {float(pca3.get(name, -1.0)):7.3f} {float(recall.get(name, 1.0)):7.3f} "
+          f"{float(dp.get(name, 1.0)):7.3f} {float(scc.get(name, 1.0)):7.3f} {int(grp.get(name, -1)):7}")

@@ -33,6 +33,8 @@ hc2$ac
 
 pltree(hc2, cex = 0.6, hang = -1, main = "Dendrogram of agnes-ward")
 
+# we identified 4 (k=4) clusters based on the pltree plot. 
+# you can also try k=2,3 ... to see the differences
 grps <- cutree(hc2, k=4)
 plot(pc, col=grps)
 

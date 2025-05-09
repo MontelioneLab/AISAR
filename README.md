@@ -68,14 +68,17 @@ Once all 6000 models are calculated, then relax
   sbatch ../script/run_relax64.sh AF_models_dropout/scores.sc
 ```
 
-  # python FilterAF2.py -log slurm-xxx.out -rel -inD AF_models_dropout/doc1_noN -outD filteredModels
+```
+  python FilterAF2.py -log slurm-xxx.out -rel -inD AF_models_dropout/doc1_noN -outD filteredModels
+```
   This command filters out bad models based on the AF log file (e.g. slurm-xxx.out). 
 
   Additional processing scripts: 
   
   Merge two chains into one chain for clustering analysis
-  # python ../scripts/runMergedChain.py filteredModels mergedModels
-  
+```
+  python ../scripts/runMergedChain.py filteredModels mergedModels
+```  
   This command finds all pdb file in the fileredModels, merge two chains (using mergeChain.py) and save them in the mergedModels directory. 
 ```  
 ### Download pre-filtered AFsample models
@@ -99,15 +102,15 @@ Runtime: it can take hours (s) to clustering 6000 models, depending on the size 
 ### Scripts:
  - runSCC.py: calulate SCC scores for all models, and write to file scc.sc 
 ```
-   # python ../scripts/runSCC.py RCI1.csv ESmodels > scc.sc
+   python ../scripts/runSCC.py RCI1.csv ESmodels > scc.sc
 ```
  - runRPF.py and getRPF.py: calculate RPF scores for all models, and write to file rpf.sc. 
 slow step - performance can be improved by only output recall, precision, f-measure and dp scores and skips others. 
 ```
    working directory: NMRdata
-   # python ../../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels 
+   python ../../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels 
    need to set the RPFcommand in the runRPF.py script 
-   # python ../../scripts/getRPF.py rpfESmodels > ../rpf.sc  
+   python ../../scripts/getRPF.py rpfESmodels > ../rpf.sc  
 ```
    Runtime: minutes to hours for 6000 models, depends on the size of the protein sequence  
    output: NMRdata/rpfESmodels and NMRdata/rpf.sc 
@@ -115,20 +118,20 @@ slow step - performance can be improved by only output recall, precision, f-meas
 - getpLDDT.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
 
 ```
-   # python ../scripts/getpLDDT.py ESmodels > pLDDT.sc 
+   python ../scripts/getpLDDT.py ESmodels > pLDDT.sc 
 ```
  - getScores.py: combine all scores. <br>
 This script only works for models with the name "relaxed****.pdb" from AFsample. If your model name is different, you will need to change the script. 
    
 ```
-   # python ../scripts/getScores.py scores.sc pLDDT.sc scc.sc rpf.sc cluster_pc_dm.csv > scores.all  
-   # python ../scripts/getScores.py > scores.all (as default, this command will also readin the above files)
+   python ../scripts/getScores.py scores.sc pLDDT.sc scc.sc rpf.sc cluster_pc_dm.csv > scores.all  
+   python ../scripts/getScores.py > scores.all (as default, this command will also readin the above files)
 ```
 ## 4. State combination
 * selectModles.py: select models based on p(model|NMR) scores, create a diretory with top5 models from each cluster <br>
    
 ``` 
- # python ../scripts/selectModels.py scores.all ESmodels/ selectedModels/ > selectedModels.log 
+ python ../scripts/selectModels.py scores.all ESmodels/ selectedModels/ > selectedModels.log 
 ```
 input: scores.all: output from step 3 - Scoring <br>
 output: selectedModels.log and selectedModels/ 
@@ -141,7 +144,7 @@ output: selectedModels.log and selectedModels/
 * groupModels.py: group all pdb files in one directory into one pdb file 
 
 ```
-# python ../scripts/groupModels.py selectedModels/a1 
+python ../scripts/groupModels.py selectedModels/a1 
 ```
 output: selectedModels/a1.pdb
    

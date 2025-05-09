@@ -160,19 +160,20 @@ output: selectedModels/a1.pdb
    
 * State combination is based on the SEM plot of RMSFvsRCI and CCC scores.
   
-   - RMSF_RCIplotOne.R
-It readin RCI.csv and selectedModels/a1
+   - make RMSF_RCI SEM plot (RMSF_RCIplotOne.R)
+input: RCI.csv and selectedModels/a1
 
 ```
 > cccA$rho.c
 est     lower     upper
 1 0.9484497 0.9251188 0.9646448
 ```
-   - RCI_pLDDT.R
+   - make RCI_pLDDT SEM plot (getRCIpLDDT.py and RCI_pLDDT.R)
+     
 ```
 python getRCIpLDDt.py <RCI.csv> <selectedModels/a1>
 ```
-output: RCI_pLDDT_selectedModels.csv and use RCI_pLDDTplot.R for the RCI_pLDDT SEM plot. 
+output: this python script gerenate this output -- RCI_pLDDT_selectedModels.csv and use RCI_pLDDTplot.R for the RCI_pLDDT SEM plot. 
    
 ## 5. Validation by DoubleRecall analysis
 

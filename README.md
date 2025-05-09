@@ -43,7 +43,11 @@ Typical install times are several minutes.
    - calculate 6000 models
 
 * run_relax64.sh
-   -   relax all 6000 models.
+   -   relax all 6000 models using 64cores
+```
+sbatch run_relax64.sh AF_models_dropout/scores.sc
+```
+
      
 Runtime: it can take day(s) to calculate 6000 models, depending on the size of the sequence and number of GPUs
 

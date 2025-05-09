@@ -1,4 +1,8 @@
 #!/bin/bash
+#SBATCH --gres=gpu:1
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=32G
 
 fasta=$1
 outfolder=AF_models_dropout/ 

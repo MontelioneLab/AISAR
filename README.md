@@ -50,7 +50,6 @@ Runtime: it can take day(s) to calculate 6000 models, depending on the size of t
    
 * FilterAF2.py: filters out bad models based on the AF log file. The python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
 
-``` 
   Input sequence for AlphaFold: doc1_noN.fasta. 
   We excluded the long disordered tails and non-native tags from the input fasta sequence for AlphaFold modeling, to avoid potential influence on the pTM and <pLDDT> scores. 
      

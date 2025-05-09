@@ -22,6 +22,11 @@ pandas
 ### RCI webserver for RCI and SCC calculation
 https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 
+script/RCItools -- tools developed to generate SHIFTY input file to run RCI webserver 
+  - RPFtable2SHIFTY.py: convert the chemical shift file used by RPF (bmrbtable file) to SHIFTY format 
+  - nmrstar3toSHIFTY-fromBMRB.py: provide the bmrb ID number, download chemical shift assignments from the BMRB database and convert to SHIFTY format
+  - nmrstar3toSHIFTY.py: convert the local bmrb file in nmrstart 3.0 format to SHIFTY format 
+
 ### ASDP/RPF for Recall calculation in batch mode 
 https://github.rpi.edu/RPIBioinformatics/ASDP_public
 
@@ -31,7 +36,7 @@ https://montelionelab.chem.rpi.edu/rpf/
 ### AFsample for enhanced sampling 
 https://github.com/bjornwallner/alphafoldv2.2.0
 
-# AlphaFold-NMR R and Python Scripts with Demo
+# AlphaFold-NMR R and Python Scripts with Demo 2kiw_AFsample/ 
 
 Typical install times are several minutes. 
 
@@ -40,27 +45,26 @@ Typical install times are several minutes.
 ## 1. AI Enhanced sampling using AFsample 
 * run_afsample6000.sh 
    - need to modify the path to fit your local computer system
-   - calculate 6000 models using 1 GPU
+   - calculate 6000 models using 1 GPU, 8 cores, 32GB RAM
 * run_relax64.sh
-   -   relax all 6000 models using 64cores
-Runtime: it can take day(s) to calculate 6000 models, depending on the size of the sequence and number of GPUs
+   -   relax all 6000 models using 64 cores, 128GB RAM 
+Runtime: it can take days to calculate 6000 models, depending on the size of the sequence. 
 
-* mergeChain.py and runMergedChain.py
+* mergeChain.py and runMergedChain.py (dimer only) 
    - merge two chains into one chain for PCA analysis 
    
-* FilterAF2.py: filters out bad models based on the AF log file. The python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
+* FilterAF2.py (optional): filters out bad models based on the AF log file. The python code is copied from here: https://github.rpi.edu/RPIBioinformatics/FilteringAF2_scripts
 
-  Input sequence for AlphaFold: doc1_noN.fasta. 
-  We excluded the long disordered tails and non-native tags from the input fasta sequence for AlphaFold modeling, to avoid potential influence on the pTM and <pLDDT> scores. 
+  Input sequence for AlphaFold: 2kiw.fasta 
      
   Commands: 
   
-  #cd CDK2AP1-doc1 (set working dir: CDK2AP1-doc1)
-
+  set working dir: 2kiw_AFsample
 ```
-  sbatch ../script/run_afsample6000.sh doc1_noN.fasta
+   cd 2kiw_AFsample 
+   sbatch ../script/run_afsample6000.sh 2kiw.fasta
 ```
-This command calculates and relax all 6000 models using run_afsample6000.sh <br> The output models are here: AF_models_dropout/doc1_noN. pTM score is reported here: AF_models_dropout/scores.sc and log from AF: slurm-xxx.out 
+This command calculates and relax all 6000 models using run_afsample6000.sh <br> The output models will be here: AF_models_dropout/2kiw. pTM score is reported here: AF_models_dropout/scores.sc and log from AF: slurm-xxx.out 
 
 Once all 6000 models are calculated, then relax
 
@@ -82,38 +86,45 @@ Once all 6000 models are calculated, then relax
   This command finds all pdb file in the fileredModels, merge two chains (using mergeChain.py) and save them in the mergedModels directory. 
   
 ### Download pre-filtered AFsample models
-https://zenodo.org/records/15015917 has 5984 models with one merged chain. Please unzip it and name it as CDK2AP1-doc1/ESmodels/ for the following analysis: 
+2kiw: https://zenodo.org/records/15377074. Unzip and name it as 2kiw/ESmodels/ for further analysis. 
+CDK2AP1-doc1: https://zenodo.org/records/15015917 has 5984 models with one merged chain. Please unzip it and name it as CDK2AP1-doc1/ESmodels/ for further analysis: 
 
 ## 2. Clustering
 * dmPCAClustering.R
-    --> output: pc_dm_pdbs.RData, cluster_pc_dm.csv (in Rstudio, set the working dir to CDK2AP1-doc1 before running the R script) 
+    --> output: pc_dm_pdbs.RData, cluster_pc_dm.csv (in Rstudio, set the working dir to 2kiw_AFsample or CDK2AP1-doc1 before running the R script) 
  
 We use "ward methods". To identify number of clusters --> by inspection of "Dendrogram" and pc plots.  
 
-Runtime: it can take hours (s) to clustering 6000 models, depending on the size of the sequence and number of GPUs
+Runtime: it can take hours (s) to cluster 6000 models, depending on the size of the sequence and the number of cores
 
 ## 3. Scoring
 
 ### Input files:
    - ESmodels: all pdb files, support filenames with "relaxed*.pdb" or "relaxed*_new.pdb"
-   - NMRdata: input files to run RPF
-   - RCI1.csv: from RCI webserver, the sequence was edited to match with merged sequence from ESmodels
+   - RPF: input files to run RPF
+   - RCI.csv: from RCI webserver, the sequence was edited to match with the sequence from ESmodels. Need a head with the corresponding columns: Number and RCI. 
 
 ### Scripts:
- - runSCC.py: calulate SCC scores for all models, and write to file scc.sc 
+ - runSCC.py: calculate SCC scores for all models, and write to file scc.sc 
 ```
-   python ../scripts/runSCC.py RCI1.csv ESmodels > scc.sc
+   python ../scripts/runSCC.py RCI.csv ESmodels > scc.sc
 ```
  - runRPF.py and getRPF.py: calculate RPF scores for all models, and write to file rpf.sc. 
-slow step - performance can be improved by only output recall, precision, f-measure and dp scores and skips others. 
+slow step - performance can be improved by reducing the I/O (for future improvement). 
+
 ```
-   working directory: NMRdata
-   python ../../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels 
-   need to set the RPFcommand in the runRPF.py script 
-   python ../../scripts/getRPF.py rpfESmodels > ../rpf.sc  
+   cd RPF
+   python ../../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels
 ```
-   Runtime: minutes to hours for 6000 models, depends on the size of the protein sequence  
-   output: NMRdata/rpfESmodels and NMRdata/rpf.sc 
+   need to set the RPFcommand in the runRPF.py script. output: RPF/refESmodels
+
+   back to the 2kiw_AFsample working directory
+```
+   cd .. 
+   python ../scripts/getRPF.py RPF/rpfESmodels > rpf.sc  
+```
+   Runtime: minutes to hours for 6000 models, depending on the size of the protein sequence  
+   output: rpf.sc 
    
 - getpLDDT.py: calculate <pLDDT> scores for all models, and write to file pLDDT.sc 
 
@@ -121,14 +132,14 @@ slow step - performance can be improved by only output recall, precision, f-meas
    python ../scripts/getpLDDT.py ESmodels > pLDDT.sc 
 ```
  - getScores.py: combine all scores. <br>
-This script only works for models with the name "relaxed****.pdb" from AFsample. If your model name is different, you will need to change the script. 
-   
+This script only works for models with the name "relaxed****.pdb" from AFsample. If your model name is different, you will need to change the script.
+
 ```
    python ../scripts/getScores.py scores.sc pLDDT.sc scc.sc rpf.sc cluster_pc_dm.csv > scores.all  
    python ../scripts/getScores.py > scores.all (as default, this command will also readin the above files)
 ```
 ## 4. State combination
-* selectModles.py: select models based on p(model|NMR) scores, create a diretory with top5 models from each cluster <br>
+* selectModles.py: select models based on pNMR scores, create a directory with top5 models from each cluster <br>
    
 ``` 
  python ../scripts/selectModels.py scores.all ESmodels/ selectedModels/ > selectedModels.log 
@@ -140,18 +151,28 @@ output: selectedModels.log and selectedModels/
  plots: plotScores.R: R plots of these scores for model selection 
 ```
 
-   
-* groupModels.py: group all pdb files in one directory into one pdb file 
+* groupModels.py: group all pdb files in one directory into one pdb file with multiple models
 
 ```
 python ../scripts/groupModels.py selectedModels/a1 
 ```
 output: selectedModels/a1.pdb
    
-* State combination is based on the SEM plot of RMSFvsRCI and CCC scores. 
+* State combination is based on the SEM plot of RMSFvsRCI and CCC scores.
+  
+   - RMSF_RCIplotOne.R
+It readin RCI.csv and selectedModels/a1
+
 ```
-example R code: CDK2AP1-doc1/RMSF_RCIplot.R 
+> cccA$rho.c
+est     lower     upper
+1 0.9484497 0.9251188 0.9646448
 ```
+   - RCI_pLDDT.R
+```
+python getRCIpLDDt.py <RCI.csv> <selectedModels/a1>
+```
+output: RCI_pLDDT_selectedModels.csv and use RCI_pLDDTplot.R for the RCI_pLDDT SEM plot. 
    
 ## 5. Validation by DoubleRecall analysis
 
@@ -163,15 +184,7 @@ For selected states, get RPF.zip file by runing RPF webserver (https://www.rando
 * DoubleRecall - ensemble A vs ensembles B1+B2: 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ)https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ   
    
-# Other codes that may be useful: 
-* RCItools -- tools we developed to generate SHIFTY input file to run RCI webserver 
-  - RPFtable2SHIFTY.py: convert the chemical shift file used by RPF (bmrbtable file) to SHIFTY format 
-  - nmrstar3toSHIFTY-fromBMRB.py: give the bmrb ID number, download chemical shift assignments from the BMRB database and convert to SHIFTY format
-  - nmrstar3toSHIFTY.py: convert the local bmrb file in nmrstart 3.0 format to SHIFTY format 
 
-R plots
-* pLDDT_RCIplot.R
-   
  
 
 

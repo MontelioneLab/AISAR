@@ -4,6 +4,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=32G
 
+source /gpfs/u/barn/PMAR/shared/etc/231_alphaFOLD
+
 fasta=$1
 outfolder=AF_models_dropout/ 
 #UPDATE the DOWNLOAD_DIR to the location of the AF databases:

@@ -59,7 +59,7 @@ Runtime: it can take day(s) to calculate 6000 models, depending on the size of t
   #cd CDK2AP1-doc1 (set working dir: CDK2AP1-doc1)
 
 ```
-  sbatch ../script/run_afsample6000.sh xxx.fasta
+  sbatch ../script/run_afsample6000.sh doc1_noN.fasta
 ```
 This command calculates and relax all 6000 models using run_afsample6000.sh <br> The output models are here: AF_models_dropout/doc1_noN. pTM score is reported here: AF_models_dropout/scores.sc and log from AF: slurm-xxx.out 
 

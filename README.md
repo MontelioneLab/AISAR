@@ -41,6 +41,9 @@ Typical install times are several minutes.
 * run_afsample6000.sh 
    - need to modify the path to fit your local computer system
    - calculate 6000 models
+```
+sbatch run_afsample6000.sh xxx.fasta
+```
 
 * run_relax64.sh
    -   relax all 6000 models using 64cores

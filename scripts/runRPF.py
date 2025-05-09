@@ -20,7 +20,7 @@ os.makedirs(output_dir, exist_ok=True)
 
 for root, dirs, files in os.walk(input_dir):  
     for filename in files:
-        if re.search(r"pdb$", filename):
+        if filename.endswith(".pdb"):
 
             print(f"Processing: {filename}")
 

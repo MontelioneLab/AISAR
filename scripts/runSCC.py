@@ -7,7 +7,7 @@ import pandas as pd
 
 
 if len(sys.argv) < 3:
-    print("Usage: python runSCC.py <RCI1.csv> <ESmodels_directory>")
+    print("Usage: python runSCC.py <RCI.csv> <ESmodels_directory>")
     sys.exit(1)
 
 
@@ -38,7 +38,7 @@ for root, dirs, files in os.walk(models_dir):
         with open(fn, 'r') as file:
           data = file.read()
 
-        pLDDT_list = re.findall('ATOM\s+\d+\s+CA\s+.*?(\d+\.\d+)\s+[N|O|C]', data)
+        pLDDT_list = re.findall('ATOM\s+\d+\s+CA\s+.*?(\d+\.\d+)\s+[?:N|O|C]', data)
 
         if not pLDDT_list:  
           print(f"Warning: No pLDDT values found in {filename}")
@@ -46,11 +46,18 @@ for root, dirs, files in os.walk(models_dir):
 
         pLDDT_array = np.array(pLDDT_list, dtype=float)
 
+        pdb_df = pd.DataFrame({
+            'Number': np.arange(1, len(pLDDT_array) + 1),  # 1-based residue numbering
+            'pLDDT': pLDDT_array
+        })
+
         #if len(pLDDT_array) != len(old_df["RCI1"]):
         #  print(f"Skipping {filename}: Length mismatch ({len(pLDDT_array)} vs {len(old_df['RCI1'])})")
         #  continue
 
-        new_df = pd.DataFrame({'RCI': old_df["RCI1"], 'pLDDT': pLDDT_array})
+        #new_df = pd.DataFrame({'RCI': old_df["RCI1"], 'pLDDT': pLDDT_array})
+
+        new_df = pd.merge(old_df, pdb_df, on='Number', how='left')
         
         correlation = new_df['RCI'].corr(new_df['pLDDT'], method='spearman')
         print(filename, correlation)

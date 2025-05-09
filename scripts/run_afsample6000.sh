@@ -1,10 +1,4 @@
 #!/bin/bash
-#SBATCH --gres=gpu:1
-#SBATCH --nodes=1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=32G
-
-source /gpfs/u/barn/PMAR/shared/etc/231_alphaFOLD
 
 fasta=$1
 outfolder=AF_models_dropout/ 
@@ -21,6 +15,9 @@ std_flags="
 --pdb_seqres_database_path=$DOWNLOAD_DIR/pdb_seqres/pdb_seqres.txt
 --uniprot_database_path=$DOWNLOAD_DIR/uniprot/uniprot.fasta
 "
+
+#echo $std_flags
+#exit
 
 #Create the MSAs and template search for the $fasta and stop
 #python run_alphafold.py $std_flags --model_preset multimer --fasta_paths $fasta --output_dir AF_models_dropout/ --seq_only
@@ -43,10 +40,10 @@ python $AF_path/run_alphafold.py $std_flags --model_preset multimer_v2 --fasta_p
 #get the score for all models and return a sorted scorefile.
 python $AF_path/scores_from_json.py $fasta $outfolder/ > $outfolder/scores.sc
 
-##Relax the first model N first
-#N=6000
-#for pkl in `head -n $N $outfolder/scores.sc | awk '{print $2}'`
-#do
-#    python $AF_path/run_relax_from_results_pkl.py $pkl
-#done
+#Relax the first model N first
+N=6000
+for pkl in `head -n $N $outfolder/scores.sc | awk '{print $2}'`
+do
+    python $AF_path/run_relax_from_results_pkl.py $pkl
+done
 

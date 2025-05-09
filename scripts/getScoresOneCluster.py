@@ -91,4 +91,4 @@ print(f"{'MODEL':<40} {'pTM':>7} {'pLDDT':>7} {'PCA1':>7} {'PCA2':>7} {'PCA3':>7
 for name in pca1.keys():
     print(f"{name:<40} {float(pTM.get(name, -1.0))/0.2:7.3f} {float(pLDDT.get(name, -1.0)):7.3f} {float(pca1.get(name, -1.0)):7.3f} "
           f"{float(pca2.get(name, -1.0)):7.3f} {float(pca3.get(name, -1.0)):7.3f} {float(recall.get(name, 1.0)):7.3f} "
-          f"{float(dp.get(name, 1.0)):7.3f} {float(scc.get(name, 1.0)):7.3f} {int(grp.get(name, -1)):7}")
+          f"{float(dp.get(name, 1.0)):7.3f} {float(scc.get(name, 1.0)):7.3f} {1:7}")

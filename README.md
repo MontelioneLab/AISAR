@@ -40,18 +40,9 @@ Typical install times are several minutes.
 ## 1. AI Enhanced sampling using AFsample 
 * run_afsample6000.sh 
    - need to modify the path to fit your local computer system
-   - calculate 6000 models
-```
-sbatch run_afsample6000.sh xxx.fasta
-```
-
+   - calculate 6000 models using 1 GPU
 * run_relax64.sh
    -   relax all 6000 models using 64cores
-```
-sbatch run_relax64.sh AF_models_dropout/scores.sc
-```
-
-     
 Runtime: it can take day(s) to calculate 6000 models, depending on the size of the sequence and number of GPUs
 
 * mergeChain.py and runMergedChain.py
@@ -66,11 +57,18 @@ Runtime: it can take day(s) to calculate 6000 models, depending on the size of t
   Commands: 
   
   #cd CDK2AP1-doc1 (set working dir: CDK2AP1-doc1)
-  
-  sbatch run_doc1_noN.sh (running with slrum) 
-  This command calculates and relax all 6000 models using run_afsample6000.sh <br>
-  The output models are here: AF_models_dropout/doc1_noN. pTM score is reported here: AF_models_dropout/scores.sc and log from AF: slurm-xxx.out 
-  
+
+```
+  sbatch ../script/run_afsample6000.sh xxx.fasta
+```
+This command calculates and relax all 6000 models using run_afsample6000.sh <br> The output models are here: AF_models_dropout/doc1_noN. pTM score is reported here: AF_models_dropout/scores.sc and log from AF: slurm-xxx.out 
+
+Once all 6000 models are calculated, then relax
+
+```
+  sbatch ../script/run_relax64.sh AF_models_dropout/scores.sc
+```
+
   # python FilterAF2.py -log slurm-xxx.out -rel -inD AF_models_dropout/doc1_noN -outD filteredModels
   This command filters out bad models based on the AF log file (e.g. slurm-xxx.out). 
 

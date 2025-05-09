@@ -86,7 +86,7 @@ Once all 6000 models are calculated, then relax
   This command finds all pdb file in the fileredModels, merge two chains (using mergeChain.py) and save them in the mergedModels directory. 
   
 ### Download pre-filtered AFsample models
-2kiw: https://zenodo.org/records/15377074. Unzip and name it as 2kiw/ESmodels/ for further analysis. 
+2kiw: https://zenodo.org/records/15377074. Unzip and name it as 2kiw/ESmodels/ for further analysis. <br>
 CDK2AP1-doc1: https://zenodo.org/records/15015917 has 5984 models with one merged chain. Please unzip it and name it as CDK2AP1-doc1/ESmodels/ for further analysis: 
 
 ## 2. Clustering

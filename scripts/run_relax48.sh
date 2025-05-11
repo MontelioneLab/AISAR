@@ -1,14 +1,14 @@
 #!/bin/bash
 #SBATCH --job-name=relaxBatch
-#SBATCH --cpus-per-task=64
-#SBATCH --mem=128G
+#SBATCH --cpus-per-task=48
+#SBATCH --mem=96G
 #SBATCH --nodes=1
 #SBATCH --output=logs/relax_batch_master.out
 
 export OPENMM_DEFAULT_PLATFORM=CPU
 export OPENMM_CPU_THREADS=16
 export XLA_PYTHON_CLIENT_PREALLOCATE=false
-export XLA_FLAGS=--xla_force_host_platform_device_count=64
+export XLA_FLAGS=--xla_force_host_platform_device_count=48
 
 source /gpfs/u/barn/PMAR/shared/etc/231_alphaFOLD
 

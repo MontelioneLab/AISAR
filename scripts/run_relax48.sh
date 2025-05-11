@@ -22,7 +22,7 @@ txt_file="$1"
 AF_path=/gpfs/u/barn/PMAR/shared/local/alphafoldv2.2.0
 
 N=6000
-JOBS_AT_ONCE=4
+JOBS_AT_ONCE=3
 COUNT=0
 
 mkdir -p logs

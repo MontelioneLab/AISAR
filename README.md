@@ -161,8 +161,7 @@ output: selectedModels/a1.pdb
 * State combination is based on the SEM plot of RMSFvsRCI and CCC scores.
   
    - make RMSF_RCI SEM plot (RMSF_RCIplotOne.R)
-input: RCI.csv and selectedModels/a1
-
+for 2kiw: inputs are RCI.csv and selectedModels/a1 
 ```
 > cccA$rho.c
 est     lower     upper

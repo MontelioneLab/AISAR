@@ -46,8 +46,8 @@ Typical install times are several minutes.
 * run_afsample6000.sh 
    - need to modify the path to fit your local computer system
    - calculate 6000 models using 1 GPU, 8 cores, 32GB RAM
-* run_relax64.sh
-   -   relax all 6000 models using 64 cores, 128GB RAM 
+* run_relax48.sh
+   -   relax all 6000 models using 48 cores, 96GB RAM 
 Runtime: it can take days to calculate 6000 models, depending on the size of the sequence. 
 
 * mergeChain.py and runMergedChain.py (dimer only) 

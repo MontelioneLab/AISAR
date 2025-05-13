@@ -36,7 +36,10 @@ https://montelionelab.chem.rpi.edu/rpf/
 ### AFsample for enhanced sampling 
 https://github.com/bjornwallner/alphafoldv2.2.0
 
-# AlphaFold-NMR R and Python Scripts with Demo 2kiw_AFsample/ 
+# AlphaFold-NMR R and Python Scripts with Demo 2kiw_AFsample/ and CDK2AP1-doc1/
+
+2kiw_AFsample --> monomer and single-state <br>
+CDK2AP1-doc1 --> dimer and two-states <br> 
 
 Typical install times are several minutes. 
 
@@ -73,19 +76,19 @@ Once all 6000 models are calculated, then relax
 ```
 
 ```
-  python FilterAF2.py -log slurm-xxx.out -rel -inD AF_models_dropout/doc1_noN -outD filteredModels
+  python FilterAF2.py -log slurm-xxx.out -rel -inD AF_models_dropout/2kiw -outD filteredModels
 ```
-  This command filters out bad models based on the AF log file (e.g. slurm-xxx.out). 
+  This command filters out bad models based on the AF log file (e.g. slurm-xxx.out). slurm-xxx.out file is the output file from sbatch run_afsample6000.sh.  
 
-  Additional processing scripts: 
+  Additional processing scripts for dimer: 
   
   Merge two chains into one chain for clustering analysis
 ```
-  python ../scripts/runMergedChain.py filteredModels mergedModels
+  python ../scripts/runMergedChain.py <twoChains> <mergedChain>
 ```  
-  This command finds all pdb file in the fileredModels, merge two chains (using mergeChain.py) and save them in the mergedModels directory. 
+  This command finds all pdb file in the <twoChains>, merge two chains (using mergeChain.py) and save them in the <mergedChain> directory. 
   
-### Download pre-filtered AFsample models
+### Download pre-calculated AFsample models
 2kiw: https://zenodo.org/records/15377074. Unzip and name it as 2kiw/ESmodels/ for further analysis. <br>
 CDK2AP1-doc1: https://zenodo.org/records/15015917 has 5984 models with one merged chain. Please unzip it and name it as CDK2AP1-doc1/ESmodels/ for further analysis: 
 
@@ -113,7 +116,7 @@ Runtime: it can take hours (s) to cluster 6000 models, depending on the size of 
 slow step - performance can be improved by reducing the I/O (for future improvement). 
 
 ```
-   cd RPF
+   cd RPF (for 2kiw) or cd NMRdata (for CDK2AP1-doc1) 
    python ../../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels
 ```
    need to set the RPFcommand in the runRPF.py script. output: RPF/refESmodels

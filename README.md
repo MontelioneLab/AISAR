@@ -102,7 +102,7 @@ Runtime: it can take hours (s) to cluster 6000 models, depending on the size of 
 ### Input files:
    - ESmodels: all pdb files, support filenames with "relaxed*.pdb" or "relaxed*_new.pdb"
    - RPF: input files to run RPF
-   - RCI.csv: from RCI webserver, the sequence was edited to match with the sequence from ESmodels. Need a head with the corresponding columns: Number and RCI. 
+   - RCI.csv: output from the RCI webserver, the RCI sequence was edited to match the pdb sequence from ESmodels. Need to add a header to the corresponding columns: Number, RCI and Residue and save as csv format.  
 
 ### Scripts:
  - runSCC.py: calculate SCC scores for all models, and write to file scc.sc 

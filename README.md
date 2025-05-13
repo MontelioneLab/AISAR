@@ -38,8 +38,8 @@ https://github.com/bjornwallner/alphafoldv2.2.0
 
 # AlphaFold-NMR R and Python Scripts with Demo 2kiw_AFsample/ and CDK2AP1-doc1/
 
-2kiw_AFsample --> monomer and single-state <br>
-CDK2AP1-doc1 --> dimer and two-states <br> 
+2kiw_AFsample --> monomer and single-state conformation <br>
+CDK2AP1-doc1 --> dimer and two-state conformation <br> 
 
 Typical install times are several minutes. 
 

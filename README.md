@@ -10,10 +10,10 @@ Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione 
 
 ### R Packages: 
 ```
-bio3d: http://thegrantlab.org/bio3d/
+bio3d: http://thegrantlab.org/bio3d_v2/tutorials/installing-bio3d
 cluster 
 ```
-### Python Dependences
+### Python Dependencies
 ```
 numpy
 pandas

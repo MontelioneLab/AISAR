@@ -10,7 +10,7 @@ Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione 
 
 ### R Packages: 
 ```
-bio3d: http://thegrantlab.org/bio3d_v2/tutorials/installing-bio3d (muscle is needed) 
+bio3d: http://thegrantlab.org/bio3d_v2/tutorials/installing-bio3d (install muscle: brew install brewsci/bio/muscle) 
 cluster 
 ```
 ### Python Dependencies

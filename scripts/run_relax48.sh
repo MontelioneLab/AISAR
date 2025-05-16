@@ -3,7 +3,7 @@
 #SBATCH --cpus-per-task=48
 #SBATCH --mem=96G
 #SBATCH --nodes=1
-#SBATCH --output=logs/relax_batch_master.out
+#SBATCH --output=relax_batch_master.out
 
 export OPENMM_DEFAULT_PLATFORM=CPU
 export OPENMM_CPU_THREADS=16
@@ -25,8 +25,7 @@ N=6000
 JOBS_AT_ONCE=3
 COUNT=0
 
-mkdir -p logs
-logfile="logs/relax_combined.log"
+logfile="relax_combined.log"
 
 for pkl in $(head -n $N "$txt_file" | awk '{print $2}'); do
     {

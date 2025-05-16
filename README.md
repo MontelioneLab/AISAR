@@ -145,7 +145,7 @@ This script only works for models with the name "relaxed****.pdb" from AFsample.
 * selectModles.py: select models based on pNMR scores, create a directory with top5 models from each cluster <br>
    
 ``` 
- python ../scripts/selectModels.py scores.all ESmodels/ selectedModels/ > selectedModels.log 
+ python ../scripts/selectModels.py scores.all ESmodels/ selectedModels/ | tee selectedModels.log 
 ```
 input: scores.all: output from step 3 - Scoring <br>
 output: selectedModels.log and selectedModels/ 

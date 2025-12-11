@@ -1,8 +1,8 @@
-# AISAR Protocol (under construction) 
+# AISAR (<u>AI</u> <u>SA</u>mpling with NMR <u>R</u>ecall selection) Protocol (under construction) 
 
 Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione (2025) "Hidden Structural States of Proteins Revealed by Conformer Selection"
 
-<img width="1161" alt="flowChart" src="https://media.github.rpi.edu/user/352/files/b6534f5c-e03d-4529-a4a5-bbc697c9db04">
+<img width="1161" alt="flowChart" src="https://github.rpi.edu/RPIBioinformatics/AISAR/assets/352/c837b9bd-0e8b-44f8-9033-6477ae9f476f">
 
 ## No required non-standard hardware 
 

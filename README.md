@@ -1,8 +1,11 @@
-# AISAR (<u>AI</u> <u>SA</u>mpling with NMR <u>R</u>ecall selection) Protocol (under construction) 
+# AISAR (<ins>AI</ins> <ins>SA</ins>mpling with NMR <ins>R</ins>ecall selection) 
 
 Scripts and data corresponding to Huang, Ramelot, Spaman, Kobayashi, Montelione (2025) "Hidden Structural States of Proteins Revealed by Conformer Selection"
 
 <img width="1161" alt="flowChart" src="https://github.rpi.edu/RPIBioinformatics/AISAR/assets/352/c837b9bd-0e8b-44f8-9033-6477ae9f476f">
+
+AISAR is a computational–experimental framework for identifying fast-exchanging conformational states from NMR data. Unlike conventional NMR methods that rely on spatial restraints, AISAR combines AI-driven conformational sampling of realistic models with Bayesian-like scoring against NOESY and other NMR observables. Applied to Gaussia luciferase, AISAR reveals two interconverting states involving large rearrangements of two lids, binding pockets, and cryptic surface cavities. AISAR also identifies two distinct conformational states of the human tumor suppressor Cyclin-Dependent Kinase 2-Associated Protein 1, demonstrating its utility across diverse protein scaffolds. Validation using the NOESY Double Recall method shows that these multistate models account for more NOESY peaks than individual conformers, supporting the presence of fast-exchanging structural states in dynamic equilibrium. AISAR enables detection and evaluation of conformational heterogeneity and cryptic pockets not resolved by conventional single-state NMR analysis, providing new insights into protein structural dynamics and function.
+
 
 ## No required non-standard hardware 
 

@@ -103,20 +103,16 @@ python scripts/groupModels.py selectedModels/a1/
 Output:
 selectedModels/a1.pdb
 
-## 10. Validate Ensembles via DoubleRecall
 
-Use the RPF webserver:
+## 10. Validate Multi-State via DoubleRecall
 
-https://montelionelab.chem.rpi.edu/rpf/
+After selecting conformer sets, run the RPF webserver and download the resulting ZIP file.
 
-Or use prepared Google Colab notebooks:
-
-A vs B:
-https://colab.research.google.com/drive/1IPXZVDdxG1xpn-6tgIErWJOSLa9Rx87A
-
-A vs B1 + B2:
-https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ
-
-
+* DoubleRecall - ensemble A vs ensemble B:
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1IPXZVDdxG1xpn-6tgIErWJOSLa9Rx87A)https://colab.research.google.com/drive/1IPXZVDdxG1xpn-6tgIErWJOSLa9Rx87A
+   
+* DoubleRecall - ensemble A vs ensembles B1+B2: 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ)https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ   
+   
 
 

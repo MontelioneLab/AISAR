@@ -16,8 +16,6 @@ The full AISAR documentation is available in the `docs/` folder:
 - 🏠 **[Documentation Home](docs/index.md)**  
 
 
-## No required non-standard hardware 
-
 ## 🔧 Software Requirements
 
 ### R Packages: 

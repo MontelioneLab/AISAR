@@ -62,7 +62,7 @@ python scripts/getpLDDT.py ESmodels > pLDDT.sc
 ```
 Output: pLDDT.sc
 
-## 6. Perform PCA and Clustering (Optional but recommended)
+## 6. Perform PCA and Clustering 
 
 In R:
 ```

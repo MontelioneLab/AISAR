@@ -36,10 +36,10 @@ pandas
 
 ## External Tools / Webservers Needed
 
-### RCI webserver (for RCI and SCC calculation):
+### RCI webserver (RCI+SCC):
 https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 
-### ASDP/RPF (batch Recall calculation): 
+### ASDP/RPF (batch Recall scoring): 
 https://github.rpi.edu/RPIBioinformatics/ASDP_public
 
 ### RPF webserver (DoubleRecall): 
@@ -48,22 +48,23 @@ https://montelionelab.chem.rpi.edu/rpf/
 ### AFsample (AI enhanced sampling): 
 https://github.com/bjornwallner/alphafoldv2.2.0
 
-## Contents 
+## Repository Structure 
 ```
 AISAR/
-├─ docs/        # Documentations
+├─ docs/        # Documentation  (Quick Start, Scripts, Data)
 ├─ scripts/     # Python scripts used for conformer selection
 ├─ 2KOB/        # Data and models for 2KOB
 ├─ CDK2AP1/     # Data and models for CDK2AP1
 └─ GLuc/        # Data and models for GLuc
 ```  
 ## Download pre-calculated AFsample models
-2KOB: (Add link when available) <br>
-Unzip and name it as 2KOB/data_runs/ESmodels/  <br>
-CDK2AP1: https://zenodo.org/records/15015917 <br>
-Contains 5984 models with a merged chain. <br>
-Unzip it and name it as CDK2AP1/data_runs/ESmodels/ <br> 
-GLuc: (Add link when available)
+- 2KOB: (Add link when available) <br>
+Unzip into: 2KOB/data_runs/ESmodels/  <br>
+- CDK2AP1: https://zenodo.org/records/15015917 <br>
+Contains 5984 models(merged chain). <br>
+Unzip into: CDK2AP1/data_runs/ESmodels/ <br> 
+- GLuc: (Add link when available) <br>
+Unzip into: GLuc/data_runs/ESmodels/
 
 
    

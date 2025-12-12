@@ -10,15 +10,15 @@ Follow these numbered steps to run AISAR scoring and conformer selection.
 pip install numpy pandas
 ```
 
-R:
+### R
 install.packages(c("cluster", "DescTools", "RColorBrewer", "bio3d"))
 
-macOS MUSCLE (for bio3d):
+### macOS MUSCLE (for bio3d):
 ```bash
 brew install brewsci/bio/muscle
 ```
 
-### 2. Prepare Input Files
+## 2. Prepare Input Files
 Your dataset directory should contain:
 
 ```
@@ -32,14 +32,14 @@ Requirements for RCI.csv
 - Sequence must match PDB sequence in ESmodels
 - Include residues even if RCI is missi
 
-### 3. Compute SCC Scores
+## 3. Compute SCC Scores
 From within your dataset directory:
 ```
 python scripts/runSCC.py RCI.csv ESmodels > scc.sc
 ```
 Output: scc.sc
 
-### 4. Compute RPF Scores
+## 4. Compute RPF Scores
 
 This is the slowest step. Inside RPF/:
 
@@ -56,13 +56,13 @@ python scripts/getRPF.py RPF/rpfESmodels > rpf.sc
 ```
 Output: rpf.sc
 
-### 5. Compute pLDDT Scores
+## 5. Compute pLDDT Scores
 ```
 python scripts/getpLDDT.py ESmodels > pLDDT.sc
 ```
 Output: pLDDT.sc
 
-### 6. Perform PCA and Clustering (Optional but recommended)
+## 6. Perform PCA and Clustering (Optional but recommended)
 
 In R:
 ```
@@ -73,7 +73,7 @@ This produces:
 - PCA projections
 - clusters
 Output: cluster_pc_dm.csv 
-### 7. Combine All Scores Into One Table
+## 7. Combine All Scores Into One Table
 ```
 python scripts/getScores.py scores.sc pLDDT.sc scc.sc rpf.sc cluster_pc_dm.csv > scores.all
 ```
@@ -84,7 +84,7 @@ python scripts/getScores.py > scores.all
 ```
 Output: scores.all
 
-### 8. Select Conformers Based on Combined Scores
+## 8. Select Conformers Based on Combined Scores
 
 ```
 python scripts/selectModels.py scores.all ESmodels 5 | tee selected_models.log

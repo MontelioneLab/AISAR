@@ -61,7 +61,7 @@ Unzip into: 2KOB/data_runs/ESmodels/  <br>
 - CDK2AP1: https://zenodo.org/records/15015917 <br>
 Contains 5984 models(merged chain). <br>
 Unzip into: CDK2AP1/data_runs/ESmodels/ <br> 
-- GLuc: (Add link when available) <br>
+- GLuc: https://zenodo.org/records/17917708 <br>
 Unzip into: GLuc/data_runs/ESmodels/
 
 

@@ -94,7 +94,28 @@ selectedModels/ and selectedModels.log
 
 State sets (A, B, C, D…)
 
+## 9. Group Selected Conformers Into Ensembles
 
+```
+python scripts/groupModels.py selectedModels/a1/
+```
+
+Output:
+selectedModels/a1.pdb
+
+## 10. Validate Ensembles via DoubleRecall
+
+Use the RPF webserver:
+
+https://montelionelab.chem.rpi.edu/rpf/
+
+Or use prepared Google Colab notebooks:
+
+A vs B:
+https://colab.research.google.com/drive/1IPXZVDdxG1xpn-6tgIErWJOSLa9Rx87A
+
+A vs B1 + B2:
+https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ
 
 
 

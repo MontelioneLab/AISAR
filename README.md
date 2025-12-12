@@ -56,7 +56,7 @@ AISAR/
 └─ GLuc/        # Data and models for GLuc
 ```  
 ## 📥 Download pre-calculated AFsample models
-- 2KOB: (Add link when available) <br>
+- 2KOB: https://zenodo.org/records/17917670 <br>
 Unzip into: 2KOB/data_runs/ESmodels/  <br>
 - CDK2AP1: https://zenodo.org/records/15015917 <br>
 Contains 5984 models(merged chain). <br>

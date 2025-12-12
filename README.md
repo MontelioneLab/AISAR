@@ -6,6 +6,15 @@ Scripts and datasets (2KOB, CDK2AP1 and GLuc) used in Huang, Ramelot, Spaman, Ko
 
 AISAR is a computational–experimental framework for identifying fast-exchanging conformational states from NMR data. Unlike conventional NMR methods that rely on spatial restraints, AISAR combines AI-driven conformational sampling of realistic models with Bayesian-like scoring against NOESY and other NMR observables. Applied to Gaussia luciferase, AISAR reveals two interconverting states involving large rearrangements of two lids, binding pockets, and cryptic surface cavities. AISAR also identifies two distinct conformational states of the human tumor suppressor Cyclin-Dependent Kinase 2-Associated Protein 1, demonstrating its utility across diverse protein scaffolds. Validation using the NOESY Double Recall method shows that these multistate models account for more NOESY peaks than individual conformers, supporting the presence of fast-exchanging structural states in dynamic equilibrium. AISAR enables detection and evaluation of conformational heterogeneity and cryptic pockets not resolved by conventional single-state NMR analysis, providing new insights into protein structural dynamics and function.
 
+## 📘 Documentation
+
+The full AISAR documentation is available in the `docs/` folder:
+
+- 👉 **[Quick Start Guide](docs/quickstart.md)**  
+- 🧪 **[Scripts & Workflow](docs/scripts.md)**  
+- 📊 **[Data & Downloads](docs/data.md)**  
+- 🏠 **[Documentation Home](docs/index.md)**  
+
 
 ## No required non-standard hardware 
 
@@ -42,6 +51,7 @@ https://github.com/bjornwallner/alphafoldv2.2.0
 ## Contents 
 ```
 AISAR/
+├─ docs/        # Documentations
 ├─ scripts/     # Python scripts used for conformer selection
 ├─ 2KOB/        # Data and models for 2KOB
 ├─ CDK2AP1/     # Data and models for CDK2AP1
@@ -55,15 +65,7 @@ Contains 5984 models with a merged chain. <br>
 Unzip it and name it as CDK2AP1/data_runs/ESmodels/ <br> 
 GLuc: (Add link when available)
 
-## Validation by DoubleRecall analysis
 
-After selecting conformer sets, run the RPF webserver and download the resulting ZIP file.
-
-* DoubleRecall - ensemble A vs ensemble B:
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1IPXZVDdxG1xpn-6tgIErWJOSLa9Rx87A)https://colab.research.google.com/drive/1IPXZVDdxG1xpn-6tgIErWJOSLa9Rx87A
-   
-* DoubleRecall - ensemble A vs ensembles B1+B2: 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ)https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ   
    
 
  

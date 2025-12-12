@@ -7,6 +7,7 @@ Python utilities for conformer selection and scoring.
 - `runRPF.py` – calculate RPF scores 
 - `getRPF.py` – extract RPF scores
 - `getScores.py` – combine scores into summary tables
+- `dmPCAClustering.R` – PCA and clustering using R
   
 - `selectModels.py` – select conformers based on scores
 - `groupModels.py` – group models into ensembles

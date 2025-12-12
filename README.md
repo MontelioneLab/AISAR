@@ -23,7 +23,7 @@ The full AISAR documentation is available in the `docs/` folder:
 ### R Packages: 
 ```
 bio3d (http://thegrantlab.org/bio3d_v2/tutorials/installing-bio3d)
-    - bio3d package uses the program muscle: brew install brewsci/bio/muscle 
+    - bio3d require MUSCLE: brew install brewsci/bio/muscle 
 cluster
 DescTools
 RColorBrewer 

@@ -25,33 +25,39 @@ numpy
 pandas
 ```
 
-### RCI webserver for RCI and SCC calculation
+### External Tools / Webservers
+
+## RCI webserver (for RCI and SCC calculation):
 https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
 
-### ASDP/RPF for Recall calculation in batch mode 
+## ASDP/RPF (batch Recall calculation): 
 https://github.rpi.edu/RPIBioinformatics/ASDP_public
 
-### RPF webserver for DoubleRecall analysis 
+## RPF webserver (DoubleRecall): 
 https://montelionelab.chem.rpi.edu/rpf/
 
-### AFsample for enhanced sampling 
+## AFsample (AI enhanced sampling): 
 https://github.com/bjornwallner/alphafoldv2.2.0
 
 ### Contents 
+```
 AISAR/
 ├─ scripts/        # Python scripts used for conformer selection
 ├─ 2KOB/        # Data and models for 2KOB
 ├─ CDK2AP1/     # Data and models for CDK2AP1
 └─ GLuc/        # Data and models for GLuc
-  
+```  
 ### Download pre-calculated AFsample models
-2KOB: https://zenodo.org/records/15377074. Unzip and name it as 2kiw_AFsample/data_runs/ESmodels/ for further analysis. <br>
-CDK2AP1: https://zenodo.org/records/15015917 has 5984 models with one merged chain. Please unzip it and name it as CDK2AP1/data_runs/ESmodels/ for further analysis
-GLuc: 
+2KOB: (Add link when available) <br>
+Unzip and name it as 2KOB/data_runs/ESmodels/  <br>
+CDK2AP1: https://zenodo.org/records/15015917 <br>
+Contains 5984 models with a merged chain. <br>
+Unzip it and name it as CDK2AP1/data_runs/ESmodels/ <br> 
+GLuc: (Add link when available)
 
 ### Validation by DoubleRecall analysis
 
-For selected states, run RPF webserver (https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py) and download the zip file
+After selecting conformer sets, run the RPF webserver and download the resulting ZIP file.
 
 * DoubleRecall - ensemble A vs ensemble B:
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1IPXZVDdxG1xpn-6tgIErWJOSLa9Rx87A)https://colab.research.google.com/drive/1IPXZVDdxG1xpn-6tgIErWJOSLa9Rx87A

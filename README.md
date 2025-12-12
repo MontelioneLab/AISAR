@@ -18,7 +18,7 @@ The full AISAR documentation is available in the `docs/` folder:
 
 ## No required non-standard hardware 
 
-## Software Requirements
+## 🔧 Software Requirements
 
 ### R Packages: 
 ```
@@ -34,7 +34,7 @@ numpy
 pandas
 ```
 
-## External Tools / Webservers Needed
+## 🌐 External Tools / Webservers Needed
 
 ### RCI webserver (RCI+SCC):
 https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py
@@ -48,7 +48,7 @@ https://montelionelab.chem.rpi.edu/rpf/
 ### AFsample (AI enhanced sampling): 
 https://github.com/bjornwallner/alphafoldv2.2.0
 
-## Repository Structure 
+## 📂 Repository Structure 
 ```
 AISAR/
 ├─ docs/        # Documentation  (Quick Start, Scripts, Data)
@@ -57,7 +57,7 @@ AISAR/
 ├─ CDK2AP1/     # Data and models for CDK2AP1
 └─ GLuc/        # Data and models for GLuc
 ```  
-## Download pre-calculated AFsample models
+## Download 📥 pre-calculated AFsample models
 - 2KOB: (Add link when available) <br>
 Unzip into: 2KOB/data_runs/ESmodels/  <br>
 - CDK2AP1: https://zenodo.org/records/15015917 <br>

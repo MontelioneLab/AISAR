@@ -57,7 +57,7 @@ AISAR/
 ├─ CDK2AP1/     # Data and models for CDK2AP1
 └─ GLuc/        # Data and models for GLuc
 ```  
-## Download 📥 pre-calculated AFsample models
+## 📥 Download pre-calculated AFsample models
 - 2KOB: (Add link when available) <br>
 Unzip into: 2KOB/data_runs/ESmodels/  <br>
 - CDK2AP1: https://zenodo.org/records/15015917 <br>

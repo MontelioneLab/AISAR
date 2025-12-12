@@ -8,6 +8,7 @@ AISAR/
 ├─ 2KOB/           # data and AFsample models for 2KOB
 ├─ CDK2AP1/        # data and AFsample models for CDK2AP1
 └─ GLuc/           # data and AFsample models for GLuc
+```
 
 ## 📥 Download pre-calculated AFsample models
 - 2KOB: https://zenodo.org/records/17917670 <br>

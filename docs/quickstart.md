@@ -87,10 +87,10 @@ Output: scores.all
 ## 8. Select Conformers Based on Combined Scores
 
 ```
-python scripts/selectModels.py scores.all ESmodels 5 | tee selected_models.log
+python scripts/selectModels.py scores.all ESmodels 5 selectedModels| tee selectedModels.log
 ```
 Outputs:
-selected_models.txt
+selectedModels/ and selectedModels.log
 
 State sets (A, B, C, D…)
 

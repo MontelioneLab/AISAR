@@ -34,7 +34,7 @@ numpy
 pandas
 ```
 
-## External Tools / Webservers
+## External Tools / Webservers Needed
 
 ### RCI webserver (for RCI and SCC calculation):
 https://www.randomcoilindex.ca/cgi-bin/rci_cgi_current.py

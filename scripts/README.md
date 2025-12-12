@@ -2,11 +2,12 @@
 
 Python utilities for conformer selection and scoring.
 
+- `runSCC.py` – calculate SCC scores 
 - `getpLDDT.py` – extract pLDDT from AF outputs
-- `getScores.py` – combine scores into summary tables
 - `runRPF.py` – calculate RPF scores 
 - `getRPF.py` – extract RPF scores
-- `runSCC.py` – calculate SCC scores 
+- `getScores.py` – combine scores into summary tables
+  
 - `selectModels.py` – select conformers based on scores
 - `groupModels.py` – group models into ensembles
-  
+

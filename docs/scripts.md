@@ -1,13 +1,5 @@
 
----
-
 ### `docs/scripts.md`
-
-```markdown
----
-title: Scripts & Workflow
-layout: default
----
 
 # 📁 scripts/
 

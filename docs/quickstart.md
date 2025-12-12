@@ -13,7 +13,7 @@ pip install numpy pandas
 R:
 install.packages(c("cluster", "DescTools", "RColorBrewer", "bio3d"))
 
-# macOS MUSCLE (for bio3d):
+macOS MUSCLE (for bio3d):
 ```bash
 brew install brewsci/bio/muscle
 ```

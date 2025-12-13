@@ -18,14 +18,22 @@ The full AISAR documentation is available in the `docs/` folder:
 
 ## 🔧 Software Requirements
 
-### R Packages: 
-```
-bio3d (http://thegrantlab.org/bio3d_v2/tutorials/installing-bio3d)
-    - bio3d require MUSCLE: brew install brewsci/bio/muscle 
-cluster
-DescTools
-RColorBrewer 
-```
+### R packages used:
+
+- **bio3d**  
+  Documentation and installation:  
+  `http://thegrantlab.org/bio3d_v2/tutorials/installing-bio3d`  
+  MUSCLE is required for sequence alignment. On macOS (Homebrew):  
+  `brew install brewsci/bio/muscle`
+
+- **cluster**
+
+- **DescTools**
+
+- **RColorBrewer**
+
+The workflow can be run in **RStudio**, which is the recommended environment for convenient script editing, visualization, and interactive analysis.
+
 ### Python Dependencies
 ```
 numpy

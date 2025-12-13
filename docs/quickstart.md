@@ -76,11 +76,11 @@ dmPCAClustering.R
 ```
 and run it inside RStudio. <br>
 
-At line 41: 
+At **line 41**: 
 ```
 grps <- cutree(hc2, k=1)
 ```
-Change k to the number of clusters you would like to generate. 
+Change **k** to the number of clusters you would like to generate. 
 
 
 This produces:

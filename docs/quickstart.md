@@ -69,7 +69,7 @@ Output: pLDDT.sc
 
 ## 6. Perform PCA and Clustering 
 
-In Rstudio, first set the working directory to the folder containing data_runs and then open the script:
+In Rstudio, first set the working directory to data_runs/ and then open the script:
 
 ```
 dmPCAClustering.R

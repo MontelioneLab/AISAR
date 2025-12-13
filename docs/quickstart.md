@@ -76,7 +76,7 @@ source("scripts/dmPCAClustering.R")
 
 This produces:
 - PCA projections
-- clusters
+- clusters (1,2,3,4,,,)
 Output: cluster_pc_dm.csv 
 ## 7. Combine All Scores Into One Table
 ```
@@ -97,7 +97,33 @@ python scripts/selectModels.py scores.all ESmodels 5 selectedModels| tee selecte
 Outputs:
 selectedModels/ and selectedModels.log
 
-State sets (A, B, C, D…)
+### What this command does
+
+- scores.all – the table of combined scores (Recall, Precision, pNOE, RCI agreement, pNMR, etc.).
+
+- ESmodels – directory containing all ensemble-sampled conformers (e.g., model_0001.pdb, model_0002.pdb, …).
+
+- 5 – the number of top conformers to select. can be set to 10, 20, ...
+
+- selectedModels – output directory where the chosen models will be copied.
+
+- tee selectedModels.log
+→ prints the selection summary to the screen and writes it to selectedModels.log.
+
+### Outputs 
+
+- selectedModels 
+The selectedModels/ directory contains only the top-ranked conformers that satisfy the combined AISAR scoring criteria. Its' subfolders are named using a state label (a–d) followed by the cluster index. The letter denotes the ranked state assignment based on pNMR support (A highest, B second, etc.), whereas the number indicates the original geometric cluster index.
+- selectedModels.log 
+A readable log file showing:
+- ranking
+- combined score per model
+- pTM/pLDDT/SCC/Recall/DP/pNMR scores
+- cluster assignment
+- final selection decision
+
+This log is useful for supplemental materials.
+
 
 ## 9. Group Selected Conformers Into Ensembles
 

@@ -41,3 +41,6 @@ This directory includes:
 - Data files used for plotting
 - Processed results (scores.all, CSV, ...) used in the analysis
 
+To reproduce the figures:
+
+In **RStudio**, first set the working directory to the appropriate folder (e.g., figs_tables/ or figs/), then open the corresponding R scripts and run them inside RStudio.

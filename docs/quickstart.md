@@ -69,15 +69,27 @@ Output: pLDDT.sc
 
 ## 6. Perform PCA and Clustering 
 
-In R:
+In Rstudio, first set the working directory to the folder containing data_runs and then open the script:
+
 ```
-source("scripts/dmPCAClustering.R")
+dmPCAClustering.R
 ```
+and run it inside RStudio. <br>
+
+At line 41: 
+```
+grps <- cutree(hc2, k=1)
+```
+Change k to the number of clusters you would like to generate. 
+
 
 This produces:
 - PCA projections
 - clusters (1,2,3,4,,,)
-Output: cluster_pc_dm.csv 
+Output file:
+```
+cluster_pc_dm.csv
+```
 ## 7. Combine All Scores Into One Table
 ```
 python scripts/getScores.py scores.sc pLDDT.sc scc.sc rpf.sc cluster_pc_dm.csv > scores.all

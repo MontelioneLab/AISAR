@@ -157,5 +157,28 @@ After selecting conformer sets, run the RPF webserver and download the resulting
 * DoubleRecall - ensemble A vs ensembles B1+B2: 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ)https://colab.research.google.com/drive/1YShoUAQWdKu0EccMJgkLeeiojUWKT0SJ   
    
+### Saving the DoubleRecall Colab Notebook
+
+After running DoubleRecall in Google Colab, you can save your work for documentation or future reruns:
+
+#### Download the notebook
+
+In Colab:
+**File → Download → Download .ipynb**
+
+**Upload the notebook later**
+
+To reopen your saved notebook:
+**File → Upload notebook → Select your .ipynb file**
+
+#### Archiving Notebooks
+
+The notebooks used to generate Fig. XXXX are archived in the:
+```
+doubleRecall/
+```
+
+directory.
+
 
 

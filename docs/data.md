@@ -19,7 +19,7 @@ Unzip into: CDK2AP1/data_runs/ESmodels/ <br>
 - GLuc: https://zenodo.org/records/17917708 <br>
 Unzip into: GLuc/data_runs/ESmodels/
 
-## 🗂️ Archiving DoubleRecall Notebooks
+## 🗂️ Archived DoubleRecall Notebooks
 
 Four DoubleRecall notebooks for the relevant figures and tables are archived in:
 

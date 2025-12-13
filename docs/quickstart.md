@@ -171,12 +171,7 @@ In Colab:
 To reopen your saved notebook:
 **File → Upload notebook → Select your .ipynb file**
 
-#### Archiving Notebooks
 
-The notebooks used to generate Fig. XXXX are archived in the:
-```
-doubleRecall/
-```
 
 
 

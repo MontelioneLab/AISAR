@@ -3,7 +3,7 @@
 library(bio3d)
 setup.ncore(10)
 
-#set the working directory to the folder with ESmodels 
+# Set the working directory so that the "ESmodels" folder is in the current path
 
 pdbfiles <- list.files("ESmodels", pattern=".pdb", full.names=TRUE) 
 pdbs <- pdbaln(pdbfiles, super5=TRUE, ncore=10)
@@ -24,8 +24,8 @@ save(pc, dm, pdbs, pdbs.aa, file = "dm_pc.RData") # achive
 library(cluster)
 setup.ncore(10)
 
-#redo clustering, and skip the PCA analysis, uncomment load... 
-load("dm_pc.RData")
+# Reload PCA results (allows you to skip recomputing dm and pc)
+#load("dm_pc.RData")
  
 plot.pca.scree(pc) 
 

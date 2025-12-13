@@ -18,3 +18,26 @@ Unzip into: 2KOB/data_runs/ESmodels/  <br>
 Unzip into: CDK2AP1/data_runs/ESmodels/ <br> 
 - GLuc: https://zenodo.org/records/17917708 <br>
 Unzip into: GLuc/data_runs/ESmodels/
+
+## Archiving Notebooks
+
+Four notebooks for the relevant figures and tables are archived in:
+
+```
+doubleRecall/   (CDK2AP1 and GLuc)
+```
+
+## Figures & Tables
+
+All files and R scripts used to generate the figures and tables in the paper are archived in:
+
+```
+figs_tables/    (CDK2AP1 and GLuc)
+figs/           (2KOB)
+```
+
+This directory includes:
+- R scripts for generating each figure
+- Data files used for plotting
+- Processed results (CSV, RData) used in the analysis
+

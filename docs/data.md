@@ -4,6 +4,7 @@
 
 ```text
 AISAR/
+├─ docs/           # Documentation  (Quick Start, Scripts, Data)
 ├─ scripts/        # core analysis scripts
 ├─ 2KOB/           # data and AFsample models for 2KOB
 ├─ CDK2AP1/        # data and AFsample models for CDK2AP1

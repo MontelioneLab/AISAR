@@ -35,7 +35,7 @@ Requirements for RCI.csv
 
 Requirments for ESmodels
 - All relaxed pdb files
-
+- Examples: https://github.rpi.edu/RPIBioinformatics/AISAR/blob/main/docs/data.md
 
 ## 3. Compute SCC Scores
 From within your dataset directory:

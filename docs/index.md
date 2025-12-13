@@ -51,7 +51,7 @@ Information on:
 - AFsample (enhanced AlphaFold sampling):  
   https://github.com/bjornwallner/alphafoldv2.2.0
 
-- ASDP/RPF (batch Recall scoring):
+- ASDP/RPF (batch Recall scoring): 
   https://github.rpi.edu/RPIBioinformatics/ASDP_public
 
 - RPF/DoubleRecall webserver:  

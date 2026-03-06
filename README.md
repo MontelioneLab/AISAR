@@ -1,6 +1,6 @@
 # AISAR (<ins>AI</ins> <ins>SA</ins>mpling with NMR <ins>R</ins>ecall selection) 
 
-Scripts and datasets (2KOB, CDK2AP1 and GLuc) used in Huang, Ramelot, Spaman, Kobayashi, & Montelione (2025) "Hidden Structural States of Proteins Revealed by Conformer Selection"
+Scripts and datasets (2KOB, CDK2AP1 and GLuc) used in Huang, Ramelot, Spaman, Kobayashi, & Montelione (2026) "Hidden Structural States of Proteins Revealed by Conformer Selection"
 
 <img width="1161" alt="flowChart" src="https://github.rpi.edu/RPIBioinformatics/AISAR/assets/352/c837b9bd-0e8b-44f8-9033-6477ae9f476f">
 

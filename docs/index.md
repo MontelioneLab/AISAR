@@ -66,7 +66,7 @@ Information on:
 
 If you use AISAR, please cite:
 
-**Huang, Ramelot, Spaman, Kobayashi & Montelione (2025)**  
+**Huang, Ramelot, Spaman, Kobayashi & Montelione (2026)**  
 *Hidden Structural States of Proteins Revealed by Conformer Selection*
 
 ---

@@ -32,6 +32,10 @@ The full AISAR documentation is available in the `docs/` folder:
 
 - **RColorBrewer**
 
+- **minpack.lm**
+  
+- **zeallot**
+
 The workflow can be run in **RStudio**, which is the recommended environment for convenient script editing, visualization, and interactive analysis.
 
 ### Python Dependencies

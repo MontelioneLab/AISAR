@@ -11,7 +11,7 @@ pip install numpy pandas
 ```
 
 ### R
-install.packages(c("cluster", "DescTools", "RColorBrewer", "bio3d", "minpack.lm", "zeallot", "RColorBrewer", "DescTools"))
+install.packages(c("cluster", "DescTools", "RColorBrewer", "bio3d", "minpack.lm", "zeallot", "RColorBrewer"))
 
 ### macOS MUSCLE (for bio3d):
 ```bash

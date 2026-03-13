@@ -52,7 +52,8 @@ This is the slowest step. Inside RPF/:
 cd RPF
 python ../../../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels
 ```
-Make sure to set RPFcommand correctly inside runRPF.py (install RPF: https://github.rpi.edu/RPIBioinformatics/ASDP_public)
+Make sure to set RPFcommand correctly inside runRPF.py <br>
+install RPF: https://github.rpi.edu/RPIBioinformatics/ASDP_public
 
 Extract RPF scores:
 ```

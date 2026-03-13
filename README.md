@@ -71,6 +71,8 @@ Unzip into: CDK2AP1/data_runs/ESmodels/ <br>
 - GLuc: https://zenodo.org/records/17917708 <br>
 Unzip into: GLuc/data_runs/ESmodels/
 
+## 📥 Other Source Data
+Secondary-structure analysis of GLuc MD simulations (Figure S10): https://doi.org/10.5281/zenodo.18992512
 
    
 

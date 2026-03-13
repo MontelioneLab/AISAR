@@ -31,7 +31,7 @@ Your dataset directory should contain:
 Requirements for RCI.csv
 - Columns: Number, RCI, Residue
 - Sequence must match PDB sequence in ESmodels
-- Include residues even if RCI is missi
+- Include residues even if RCI is missing
 
 Requirments for ESmodels
 - All relaxed pdb files

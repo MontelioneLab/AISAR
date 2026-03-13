@@ -23,7 +23,7 @@ The full AISAR documentation is available in the `docs/` folder:
 - **bio3d**  
   Documentation and installation:  
   `http://thegrantlab.org/bio3d_v2/tutorials/installing-bio3d`  
-  MUSCLE is required for sequence alignment. On macOS (Homebrew):  
+  MUSCLE is required for sequence alignment (https://drive5.com/muscle/). On macOS (Homebrew):  
   `brew install brewsci/bio/muscle`
 
 - **cluster**

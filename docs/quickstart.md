@@ -22,7 +22,7 @@ brew install brewsci/bio/muscle
 Your dataset directory should contain:
 
 ```
-<protein>/
+<protein>/data_runs/
 ├─ ESmodels/        # All AFsample / AlphaFold PDB models
 ├─ RPF/             # Folder for RPF scoring
 ├─ RCI.csv          # Edited RCI output (Number, RCI, Residue)
@@ -35,12 +35,12 @@ Requirements for RCI.csv
 
 Requirments for ESmodels
 - All relaxed pdb files
-- Examples: https://github.rpi.edu/RPIBioinformatics/AISAR/blob/main/docs/data.md
+- Examples: https://github.com/MontelioneLab/AISAR/blob/main/docs/data.md
 
 ## 3. Compute SCC Scores
 From within your dataset directory:
 ```
-python scripts/runSCC.py RCI.csv ESmodels > scc.sc
+python ../../scripts/runSCC.py RCI.csv ESmodels > scc.sc
 ```
 Output: scc.sc
 
@@ -50,20 +50,20 @@ This is the slowest step. Inside RPF/:
 
 ```
 cd RPF
-python ../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels
+python ../../../scripts/runRPF.py control_RPF ../ESmodels rpfESmodels
 ```
 Make sure to set RPFcommand correctly inside runRPF.py.
 
 Extract RPF scores:
 ```
 cd ..
-python scripts/getRPF.py RPF/rpfESmodels > rpf.sc
+python ../../scripts/getRPF.py RPF/rpfESmodels > rpf.sc
 ```
 Output: rpf.sc
 
 ## 5. Compute pLDDT Scores
 ```
-python scripts/getpLDDT.py ESmodels > pLDDT.sc
+python ../../scripts/getpLDDT.py ESmodels > pLDDT.sc
 ```
 Output: pLDDT.sc
 
@@ -92,19 +92,19 @@ cluster_pc_dm.csv
 ```
 ## 7. Combine All Scores Into One Table
 ```
-python scripts/getScores.py scores.sc pLDDT.sc scc.sc rpf.sc cluster_pc_dm.csv > scores.all
+python ../../scripts/getScores.py scores.sc pLDDT.sc scc.sc rpf.sc cluster_pc_dm.csv > scores.all
 ```
 
 Or use default filenames:
 ```
-python scripts/getScores.py > scores.all
+python ../../scripts/getScores.py > scores.all
 ```
 Output: scores.all
 
 ## 8. Select Conformers Based on Combined Scores
 
 ```
-python scripts/selectModels.py scores.all ESmodels 5 selectedModels| tee selectedModels.log
+python ../../scripts/selectModels.py scores.all ESmodels 5 selectedModels| tee selectedModels.log
 ```
 Outputs:
 selectedModels/ and selectedModels.log
@@ -134,13 +134,13 @@ A readable log file showing:
 - cluster assignment
 - final selection decision
 
-This log is useful for supplemental materials.
+This log is useful for state selection and combination.
 
 
 ## 9. Group Selected Conformers Into Ensembles
 
 ```
-python scripts/groupModels.py selectedModels/a1/
+python ../../scripts/groupModels.py selectedModels/a1/
 ```
 
 Output:

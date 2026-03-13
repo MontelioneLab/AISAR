@@ -21,9 +21,10 @@ The full AISAR documentation is available in the `docs/` folder:
 ### R packages used:
 
 - **bio3d**  
-  Documentation and installation:  
-  `http://thegrantlab.org/bio3d_v2/tutorials/installing-bio3d`  
-  MUSCLE is required for sequence alignment (https://drive5.com/muscle/). On macOS (Homebrew):  
+  Documentation and installation: http://thegrantlab.org/bio3d_v2/tutorials/installing-bio3d
+  <br>
+  MUSCLE is required for sequence alignment (https://drive5.com/muscle/).
+  <br>On macOS (Homebrew):  
   `brew install brewsci/bio/muscle`
 
 - **cluster**
